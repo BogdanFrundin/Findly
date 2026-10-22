@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="uk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -371,13 +371,13 @@ table.sz tr.on td{color:var(--bur);font-weight:600}
 </svg>
 
 <div class="stage">
-  <nav class="map" id="map" aria-label="Экраны макета"></nav>
+  <nav class="map" id="map" aria-label="Екрани макета"></nav>
   <div class="phone" id="phone">
     <div class="scroll" id="scroll"></div>
     <div id="chrome"></div>
     <div id="mlayer"></div>
     <div class="toast" id="toast" role="status"><span class="ms">check</span><span id="toastText"></span></div>
-    <button class="fab" id="fab" type="button"><span class="ms">apps</span>Экраны</button>
+    <button class="fab" id="fab" type="button"><span class="ms">apps</span>Екрани</button>
   </div>
 </div>
 
@@ -388,64 +388,64 @@ table.sz tr.on td{color:var(--bur);font-weight:600}
 /* ---------- data ---------- */
 const STORES={"Kasta":"https://kasta.ua","Intertop":"https://intertop.ua","Answear":"https://answear.ua","Mango":"https://shop.mango.com","COS":"https://www.cos.com"};
 const P=[
-  {id:"j1",cat:"jeans",shape:"pants",store:"Kasta",name:"Широкие джинсы High Loose",price:1290,old:1890,tone:"#9db4cc",color:"голубой",attrs:["широкий крой","высокая посадка","премиум-вид"],q:4,mat:"Плотный хлопок 12 oz"},
-  {id:"j2",cat:"jeans",shape:"pants",store:"Intertop",name:"Джинсы wide leg, плотный деним",price:2240,tone:"#86a1bf",color:"голубой",attrs:["широкий крой","высокая посадка","премиум-вид"],q:5,mat:"100% хлопок, жёсткий деним"},
-  {id:"j3",cat:"jeans",shape:"pants",store:"Answear",name:"Джинсы палаццо, светлый деним",price:2190,old:2690,tone:"#b5c7da",color:"голубой",attrs:["широкий крой"],q:3,mat:"Хлопок с лиоцеллом"},
-  {id:"j4",cat:"jeans",shape:"pants",store:"Mango",name:"Джинсы wide leg с высокой талией",price:1999,tone:"#7f9bbb",color:"голубой",attrs:["широкий крой","высокая посадка"],q:4,mat:"Хлопок 98%"},
-  {id:"j5",cat:"jeans",shape:"straight",store:"COS",name:"Прямые джинсы из жёсткого денима",price:2490,tone:"#6d8bae",color:"синий",attrs:["прямой крой","высокая посадка","премиум-вид"],q:5,mat:"Органический хлопок"},
-  {id:"d1",cat:"dress",shape:"dress",store:"Mango",name:"Платье миди, чёрное",price:2490,tone:"#272322",color:"чёрный",attrs:["миди"],q:4,mat:"Вискоза"},
-  {id:"d2",cat:"dress",shape:"sheath",store:"Answear",name:"Платье-футляр, бордовое",price:2190,tone:"#5c2230",color:"бордовый",attrs:["миди","премиум-вид"],q:4,mat:"Костюмная ткань"},
-  {id:"d3",cat:"dress",shape:"slip",store:"COS",name:"Платье-комбинация из сатина",price:2290,tone:"#3b3431",color:"чёрный",attrs:["миди","премиум-вид"],q:5,mat:"Сатин"},
-  {id:"c1",cat:"coat",shape:"coat",store:"Kasta",name:"Двубортный тренч из плотного хлопка",price:2890,old:3590,tone:"#c6ab84",color:"бежевый",attrs:["оверсайз","премиум-вид"],q:4,mat:"100% хлопок, габардин"},
-  {id:"c2",cat:"coat",shape:"coat",store:"Mango",name:"Классический тренч оверсайз",price:3200,tone:"#bb9d73",color:"бежевый",attrs:["оверсайз"],q:4,mat:"Хлопок с полиэстером"},
-  {id:"c3",cat:"coat",shape:"coat",store:"Answear",name:"Тренч с поясом, оттенок песок",price:2450,tone:"#d3bd99",color:"бежевый",attrs:["оверсайз"],q:3,mat:"Полиэстер"},
-  {id:"c4",cat:"coat",shape:"coat",store:"Intertop",name:"Тренч водоотталкивающий",price:3590,old:4390,tone:"#b2956e",color:"бежевый",attrs:["премиум-вид"],q:5,mat:"Хлопок с пропиткой"},
-  {id:"c5",cat:"coat",shape:"coat",store:"COS",name:"Шерстяное пальто, бордо",price:4690,tone:"#5a2230",color:"бордовый",attrs:["оверсайз","премиум-вид"],q:5,mat:"Шерсть 80%"},
-  {id:"b1",cat:"blazer",shape:"blazer",store:"Mango",name:"Двубортный блейзер",price:1590,tone:"#2f2c2b",color:"чёрный",attrs:["премиум-вид"],q:4,mat:"Костюмная ткань"},
-  {id:"b2",cat:"blazer",shape:"blazer",store:"Answear",name:"Блейзер прямого кроя",price:1690,tone:"#8c8379",color:"серый",attrs:["прямой крой"],q:3,mat:"Вискоза"},
-  {id:"s1",cat:"sweater",shape:"sweater",store:"COS",name:"Кашемировый джемпер",price:3600,old:4200,tone:"#d9c8ae",color:"бежевый",attrs:["премиум-вид"],q:5,mat:"100% кашемир"},
-  {id:"s2",cat:"sweater",shape:"sweater",store:"Mango",name:"Свитер крупной вязки",price:1390,tone:"#e6dccb",color:"белый",attrs:["оверсайз"],q:3,mat:"Акрил с шерстью"},
-  {id:"t1",cat:"top",shape:"top",store:"Mango",name:"Шёлковый топ на бретелях",price:890,tone:"#e9ddcc",color:"белый",attrs:["премиум-вид"],q:4,mat:"Сатин"},
-  {id:"t2",cat:"top",shape:"top",store:"COS",name:"Трикотажный топ",price:790,tone:"#2b2827",color:"чёрный",attrs:[],q:4,mat:"Хлопок"},
-  {id:"bl1",cat:"blouse",shape:"blouse",store:"COS",name:"Шёлковая блуза свободного кроя",price:2890,tone:"#efe8db",color:"белый",attrs:["оверсайз","премиум-вид"],q:5,mat:"Шёлк"},
-  {id:"bl2",cat:"blouse",shape:"blouse",store:"Mango",name:"Блуза из вискозы",price:990,tone:"#f2ede4",color:"белый",attrs:[],q:3,mat:"Вискоза"},
-  {id:"p1",cat:"trousers",shape:"trousers",store:"Answear",name:"Брюки прямые, струящиеся",price:1090,tone:"#3b3735",color:"чёрный",attrs:["прямой крой","высокая посадка"],q:3,mat:"Вискоза"},
-  {id:"p2",cat:"trousers",shape:"trousers",store:"Mango",name:"Широкие брюки из шерсти",price:1890,tone:"#4a4440",color:"серый",attrs:["широкий крой","премиум-вид"],q:4,mat:"Шерсть 30%"},
-  {id:"p3",cat:"trousers",shape:"trousers",store:"COS",name:"Брюки с защипами",price:2490,tone:"#2f2b29",color:"чёрный",attrs:["широкий крой","высокая посадка","премиум-вид"],q:5,mat:"Шерсть 60%"},
-  {id:"p4",cat:"trousers",shape:"trousers",store:"Kasta",name:"Брюки палаццо",price:1190,tone:"#cbb89b",color:"бежевый",attrs:["широкий крой"],q:3,mat:"Полиэстер"},
-  {id:"sk1",cat:"skirt",shape:"skirt",store:"Mango",name:"Юбка миди плиссе",price:1190,tone:"#d9cbb3",color:"бежевый",attrs:["миди"],q:3,mat:"Полиэстер"},
-  {id:"l1",cat:"shoes",shape:"loafer",store:"Kasta",name:"Кожаные лоферы",price:1390,tone:"#1f1c1b",color:"чёрный",attrs:["кожа"],q:4,mat:"Натуральная кожа"},
-  {id:"l2",cat:"shoes",shape:"loafer",store:"Answear",name:"Лоферы из эко-кожи",price:1090,tone:"#3a2d24",color:"коричневый",attrs:[],q:3,mat:"Эко-кожа"},
-  {id:"k1",cat:"sneakers",shape:"sneaker",store:"Intertop",name:"Белые кожаные кроссовки",price:2390,old:2990,tone:"#f2eee7",color:"белый",attrs:["кожа","премиум-вид"],q:5,mat:"Натуральная кожа"},
-  {id:"k2",cat:"sneakers",shape:"sneaker",store:"Answear",name:"Кроссовки на плоской подошве",price:1890,tone:"#ece6dc",color:"белый",attrs:[],q:4,mat:"Кожа и замша"},
-  {id:"k3",cat:"sneakers",shape:"sneaker",store:"Kasta",name:"Белые кеды",price:1290,tone:"#f5f2ec",color:"белый",attrs:[],q:3,mat:"Хлопковая ткань"},
-  {id:"bg1",cat:"bag",shape:"bag",store:"Kasta",name:"Сумка-тоут из кожи",price:2790,tone:"#5a2230",color:"бордовый",attrs:["кожа","премиум-вид"],q:5,mat:"Натуральная кожа"},
-  {id:"bg2",cat:"bag",shape:"bag",store:"Answear",name:"Сумка-шопер из эко-кожи",price:1490,tone:"#3a302a",color:"чёрный",attrs:[],q:3,mat:"Эко-кожа"},
-  {id:"bg3",cat:"bag",shape:"bag",store:"Mango",name:"Сумка на плечо",price:1990,old:2490,tone:"#24201f",color:"чёрный",attrs:["кожа"],q:4,mat:"Кожа"},
-  {id:"sc1",cat:"scarf",shape:"scarf",store:"Answear",name:"Шарф из шерсти альпака",price:1350,old:1850,tone:"#b88f66",color:"кэмел",attrs:["премиум-вид"],q:4,mat:"Альпака 50%"}
+  {id:"j1",cat:"jeans",shape:"pants",store:"Kasta",name:"Широкі джинси High Loose",price:1290,old:1890,tone:"#9db4cc",color:"блакитний",attrs:["широкий крій","висока посадка","преміум-вигляд"],q:4,mat:"Щільна бавовна 12 oz"},
+  {id:"j2",cat:"jeans",shape:"pants",store:"Intertop",name:"Джинси wide leg, щільний денім",price:2240,tone:"#86a1bf",color:"блакитний",attrs:["широкий крій","висока посадка","преміум-вигляд"],q:5,mat:"100% бавовна, жорсткий денім"},
+  {id:"j3",cat:"jeans",shape:"pants",store:"Answear",name:"Джинси палацо, світлий денім",price:2190,old:2690,tone:"#b5c7da",color:"блакитний",attrs:["широкий крій"],q:3,mat:"Бавовна з ліоцелом"},
+  {id:"j4",cat:"jeans",shape:"pants",store:"Mango",name:"Джинси wide leg з високою талією",price:1999,tone:"#7f9bbb",color:"блакитний",attrs:["широкий крій","висока посадка"],q:4,mat:"Бавовна 98%"},
+  {id:"j5",cat:"jeans",shape:"straight",store:"COS",name:"Прямі джинси з жорсткого деніму",price:2490,tone:"#6d8bae",color:"синій",attrs:["прямий крій","висока посадка","преміум-вигляд"],q:5,mat:"Органічна бавовна"},
+  {id:"d1",cat:"dress",shape:"dress",store:"Mango",name:"Сукня міді, чорна",price:2490,tone:"#272322",color:"чорний",attrs:["міді"],q:4,mat:"Віскоза"},
+  {id:"d2",cat:"dress",shape:"sheath",store:"Answear",name:"Сукня-футляр, бордова",price:2190,tone:"#5c2230",color:"бордовий",attrs:["міді","преміум-вигляд"],q:4,mat:"Костюмна тканина"},
+  {id:"d3",cat:"dress",shape:"slip",store:"COS",name:"Сукня-комбінація з сатину",price:2290,tone:"#3b3431",color:"чорний",attrs:["міді","преміум-вигляд"],q:5,mat:"Сатин"},
+  {id:"c1",cat:"coat",shape:"coat",store:"Kasta",name:"Двобортний тренч із щільної бавовни",price:2890,old:3590,tone:"#c6ab84",color:"бежевий",attrs:["оверсайз","преміум-вигляд"],q:4,mat:"100% бавовна, габардин"},
+  {id:"c2",cat:"coat",shape:"coat",store:"Mango",name:"Класичний тренч оверсайз",price:3200,tone:"#bb9d73",color:"бежевий",attrs:["оверсайз"],q:4,mat:"Бавовна з поліестером"},
+  {id:"c3",cat:"coat",shape:"coat",store:"Answear",name:"Тренч із поясом, відтінок пісок",price:2450,tone:"#d3bd99",color:"бежевий",attrs:["оверсайз"],q:3,mat:"Поліестер"},
+  {id:"c4",cat:"coat",shape:"coat",store:"Intertop",name:"Водовідштовхувальний тренч",price:3590,old:4390,tone:"#b2956e",color:"бежевий",attrs:["преміум-вигляд"],q:5,mat:"Бавовна з просоченням"},
+  {id:"c5",cat:"coat",shape:"coat",store:"COS",name:"Вовняне пальто, бордо",price:4690,tone:"#5a2230",color:"бордовий",attrs:["оверсайз","преміум-вигляд"],q:5,mat:"Вовна 80%"},
+  {id:"b1",cat:"blazer",shape:"blazer",store:"Mango",name:"Двобортний блейзер",price:1590,tone:"#2f2c2b",color:"чорний",attrs:["преміум-вигляд"],q:4,mat:"Костюмна тканина"},
+  {id:"b2",cat:"blazer",shape:"blazer",store:"Answear",name:"Блейзер прямого крою",price:1690,tone:"#8c8379",color:"сірий",attrs:["прямий крій"],q:3,mat:"Віскоза"},
+  {id:"s1",cat:"sweater",shape:"sweater",store:"COS",name:"Кашеміровий джемпер",price:3600,old:4200,tone:"#d9c8ae",color:"бежевий",attrs:["преміум-вигляд"],q:5,mat:"100% кашемір"},
+  {id:"s2",cat:"sweater",shape:"sweater",store:"Mango",name:"Светр великої в’язки",price:1390,tone:"#e6dccb",color:"білий",attrs:["оверсайз"],q:3,mat:"Акрил із вовною"},
+  {id:"t1",cat:"top",shape:"top",store:"Mango",name:"Шовковий топ на бретелях",price:890,tone:"#e9ddcc",color:"білий",attrs:["преміум-вигляд"],q:4,mat:"Сатин"},
+  {id:"t2",cat:"top",shape:"top",store:"COS",name:"Трикотажний топ",price:790,tone:"#2b2827",color:"чорний",attrs:[],q:4,mat:"Бавовна"},
+  {id:"bl1",cat:"blouse",shape:"blouse",store:"COS",name:"Шовкова блуза вільного крою",price:2890,tone:"#efe8db",color:"білий",attrs:["оверсайз","преміум-вигляд"],q:5,mat:"Шовк"},
+  {id:"bl2",cat:"blouse",shape:"blouse",store:"Mango",name:"Блуза з віскози",price:990,tone:"#f2ede4",color:"білий",attrs:[],q:3,mat:"Віскоза"},
+  {id:"p1",cat:"trousers",shape:"trousers",store:"Answear",name:"Прямі струменисті штани",price:1090,tone:"#3b3735",color:"чорний",attrs:["прямий крій","висока посадка"],q:3,mat:"Віскоза"},
+  {id:"p2",cat:"trousers",shape:"trousers",store:"Mango",name:"Широкі штани з вовни",price:1890,tone:"#4a4440",color:"сірий",attrs:["широкий крій","преміум-вигляд"],q:4,mat:"Вовна 30%"},
+  {id:"p3",cat:"trousers",shape:"trousers",store:"COS",name:"Штани з защипами",price:2490,tone:"#2f2b29",color:"чорний",attrs:["широкий крій","висока посадка","преміум-вигляд"],q:5,mat:"Вовна 60%"},
+  {id:"p4",cat:"trousers",shape:"trousers",store:"Kasta",name:"Штани палацо",price:1190,tone:"#cbb89b",color:"бежевий",attrs:["широкий крій"],q:3,mat:"Поліестер"},
+  {id:"sk1",cat:"skirt",shape:"skirt",store:"Mango",name:"Спідниця міді плісе",price:1190,tone:"#d9cbb3",color:"бежевий",attrs:["міді"],q:3,mat:"Поліестер"},
+  {id:"l1",cat:"shoes",shape:"loafer",store:"Kasta",name:"Шкіряні лофери",price:1390,tone:"#1f1c1b",color:"чорний",attrs:["шкіра"],q:4,mat:"Натуральна шкіра"},
+  {id:"l2",cat:"shoes",shape:"loafer",store:"Answear",name:"Лофери з екошкіри",price:1090,tone:"#3a2d24",color:"коричневий",attrs:[],q:3,mat:"Екошкіра"},
+  {id:"k1",cat:"sneakers",shape:"sneaker",store:"Intertop",name:"Білі шкіряні кросівки",price:2390,old:2990,tone:"#f2eee7",color:"білий",attrs:["шкіра","преміум-вигляд"],q:5,mat:"Натуральна шкіра"},
+  {id:"k2",cat:"sneakers",shape:"sneaker",store:"Answear",name:"Кросівки на пласкій підошві",price:1890,tone:"#ece6dc",color:"білий",attrs:[],q:4,mat:"Шкіра та замша"},
+  {id:"k3",cat:"sneakers",shape:"sneaker",store:"Kasta",name:"Білі кеди",price:1290,tone:"#f5f2ec",color:"білий",attrs:[],q:3,mat:"Бавовняна тканина"},
+  {id:"bg1",cat:"bag",shape:"bag",store:"Kasta",name:"Сумка-тоут зі шкіри",price:2790,tone:"#5a2230",color:"бордовий",attrs:["шкіра","преміум-вигляд"],q:5,mat:"Натуральна шкіра"},
+  {id:"bg2",cat:"bag",shape:"bag",store:"Answear",name:"Сумка-шопер з екошкіри",price:1490,tone:"#3a302a",color:"чорний",attrs:[],q:3,mat:"Екошкіра"},
+  {id:"bg3",cat:"bag",shape:"bag",store:"Mango",name:"Сумка на плече",price:1990,old:2490,tone:"#24201f",color:"чорний",attrs:["шкіра"],q:4,mat:"Шкіра"},
+  {id:"sc1",cat:"scarf",shape:"scarf",store:"Answear",name:"Шарф із вовни альпаки",price:1350,old:1850,tone:"#b88f66",color:"кемел",attrs:["преміум-вигляд"],q:4,mat:"Альпака 50%"}
 ];
 const byId=Object.fromEntries(P.map(p=>[p.id,p]));
-const DESC={jeans:"Свободный крой от бедра, высокая посадка, застёжка на пуговицы. Модель на фото ростом 175 см носит размер S.",coat:"Двубортная застёжка, пояс в комплекте, длина ниже колена. Свободная посадка: берите свой обычный размер.",dress:"Длина миди, потайная молния сзади. Ткань плотная, не просвечивает.",blazer:"Приталенный силуэт, подплечники, два кармана с клапанами.",sweater:"Мягкая вязка, спущенная линия плеча, рукав до запястья.",top:"Регулируемые бретели, длина до талии.",blouse:"Свободный крой, застёжка на пуговицы, удлинённая спинка.",trousers:"Высокая посадка, стрелки, карманы по бокам.",skirt:"Плиссировка по всей длине, эластичный пояс.",shoes:"Натуральная кожаная стелька, устойчивый каблук 2 см.",sneakers:"Анатомическая стелька, плоская подошва, шнуровка.",bag:"Одно отделение на молнии, внутренний карман, длинные ручки.",scarf:"Мягкая шерсть с бахромой, размер 200 × 40 см."};
-const CATS=[[/джинс/,"jeans","Джинсы"],[/плать/,"dress","Платье"],[/тренч|пальто|плащ/,"coat","Тренч и пальто"],[/кроссов|кед/,"sneakers","Кроссовки"],[/блейзер|пиджак|жакет/,"blazer","Блейзер"],[/джемпер|свитер/,"sweater","Свитер"],[/брюк/,"trousers","Брюки"],[/лофер|туфл|обув/,"shoes","Обувь"],[/сумк/,"bag","Сумка"],[/блуз|рубаш/,"blouse","Блуза"],[/(^|\s)топ/,"top","Топ"],[/юбк/,"skirt","Юбка"],[/шарф/,"scarf","Шарф"]];
-const COLORS=[[/голуб/,"голубой"],[/синий|синие|синюю/,"синий"],[/ч[её]рн/,"чёрный"],[/бел/,"белый"],[/беж|песоч/,"бежевый"],[/бордо|бордов|винн/,"бордовый"],[/кэмел|верблюж/,"кэмел"],[/сер(ый|ые|ую)/,"серый"]];
-const ATTRS=[[/широк|wide|палаццо/,"широкий крой"],[/прям/,"прямой крой"],[/высок/,"высокая посадка"],[/миди/,"миди"],[/оверсайз|oversize/,"оверсайз"],[/дорог|премиум|благород/,"премиум-вид"],[/кож/,"кожа"]];
+const DESC={jeans:"Вільний крій від стегна, висока посадка, застібка на ґудзики. Модель на фото зростом 175 см носить розмір S.",coat:"Двобортна застібка, пояс у комплекті, довжина нижче коліна. Вільна посадка: беріть свій звичайний розмір.",dress:"Довжина міді, прихована блискавка ззаду. Тканина щільна, не просвічується.",blazer:"Приталений силует, плечові накладки, дві кишені з клапанами.",sweater:"М’яке плетіння, спущена лінія плеча, рукав до зап’ястя.",top:"Регульовані бретелі, довжина до талії.",blouse:"Вільний крій, застібка на ґудзики, подовжена спинка.",trousers:"Висока посадка, стрілки, кишені з боків.",skirt:"Плісе по всій довжині, еластичний пояс.",shoes:"Устілка з натуральної шкіри, стійкий каблук 2 см.",sneakers:"Анатомічна устілка, пласка підошва, шнурівка.",bag:"Одне відділення на блискавці, внутрішня кишеня, довгі ручки.",scarf:"М’яка вовна з бахромою, розмір 200 × 40 см."};
+const CATS=[[/джинс/,"jeans","Джинси"],[/сукн|плать/,"dress","Сукня"],[/тренч|пальто|плащ/,"coat","Тренч і пальто"],[/кросів|кросов|кед/,"sneakers","Кросівки"],[/блейзер|піджак|пиджак|жакет/,"blazer","Блейзер"],[/джемпер|светр|свитер/,"sweater","Светр"],[/штан|брюк/,"trousers","Штани"],[/лофер|туфл|взутт|обув/,"shoes","Взуття"],[/сумк/,"bag","Сумка"],[/блуз|сорочк|рубаш/,"blouse","Блуза"],[/(^|\s)топ/,"top","Топ"],[/спідниц|юбк/,"skirt","Спідниця"],[/шарф/,"scarf","Шарф"]];
+const COLORS=[[/блакит|голуб/,"блакитний"],[/синій|сині|синю|синий/,"синій"],[/чорн|ч[её]рн/,"чорний"],[/біл|бел/,"білий"],[/беж|пісоч|песоч/,"бежевий"],[/бордо|бордов|винн/,"бордовий"],[/кемел|кэмел|верблюж/,"кемел"],[/сір(ий|і|у)|сер(ый|ые|ую)/,"сірий"]];
+const ATTRS=[[/широк|wide|палацо|палаццо/,"широкий крій"],[/прям/,"прямий крій"],[/висок|высок/,"висока посадка"],[/міді|миди/,"міді"],[/оверсайз|oversize/,"оверсайз"],[/дорог|преміум|премиум|благород|шляхетн/,"преміум-вигляд"],[/шкір|кож/,"шкіра"]];
 const FRIEND_LIST=["j1","c2","j3","bl1","sk1","sc1"];
 const ALTS={t1:"t2",t2:"t1",l1:"l2",l2:"l1",p1:"p4",p4:"p1",b1:"b2",b2:"b1",bl2:"t2",j4:"j1",j1:"j4",k3:"k2",k2:"k3",s2:"t1",c5:"c3",c3:"c5",d3:"d2",d2:"d3",bg3:"bg2",bg2:"bg3"};
-const CITIES=["Киев","Львов","Одесса","Харьков","Днепр","Винница"];
+const CITIES=["Київ","Львів","Одеса","Харків","Дніпро","Вінниця"];
 const QUIZ=[
-  {k:"occ",q:"Для какого случая собираем образ?",o:[["date","Свидание"],["office","Офис"],["walk","Прогулка"],["party","Вечеринка"]]},
-  {k:"weather",q:"Какая будет погода?",o:[["warm","Тепло"],["cool","Прохладно"],["cold","Холодно"]]},
-  {k:"colors",q:"Какие цвета вам ближе?",o:[["neutral","Нейтральные"],["dark","Тёмные"],["wine","Бордо и вино"],["light","Светлые"]]},
-  {k:"style",q:"А стиль?",o:[["classic","Классика"],["minimal","Минимализм"],["romantic","Романтика"],["sport","Спорт-шик"]]},
-  {k:"budget",q:"Какой бюджет на весь образ?",o:[["3000","до 3 000 ₴"],["5000","до 5 000 ₴"],["8000","до 8 000 ₴"]]}
+  {k:"occ",q:"Для якої нагоди збираємо образ?",o:[["date","Побачення"],["office","Офіс"],["walk","Прогулянка"],["party","Вечірка"]]},
+  {k:"weather",q:"Яка буде погода?",o:[["warm","Тепло"],["cool","Прохолодно"],["cold","Холодно"]]},
+  {k:"colors",q:"Які кольори вам ближчі?",o:[["neutral","Нейтральні"],["dark","Темні"],["wine","Бордо й вино"],["light","Світлі"]]},
+  {k:"style",q:"А стиль?",o:[["classic","Класика"],["minimal","Мінімалізм"],["romantic","Романтика"],["sport","Спорт-шик"]]},
+  {k:"budget",q:"Який бюджет на весь образ?",o:[["3000","до 3 000 ₴"],["5000","до 5 000 ₴"],["8000","до 8 000 ₴"]]}
 ];
 const BASE={date:["b1","t1","p1","l1"],office:["b2","bl2","p4","l2"],walk:["s2","j4","k3"],party:["d3","bg3","l1"]};
 const SCREENS=[
-  ["landing","Главная сайта","Вход"],["city","Выбор города"],["login","Вход и регистрация"],["menu","Меню"],
-  ["search","Поиск","Поиск"],["parse","Разбор запроса"],["results","Результаты"],["product","Карточка товара"],["sizes","Размерная сетка"],
-  ["assistant","Ассистент","AI-функции"],["looks","Образы: квиз"],["camera","Поиск по фото"],["crop","Выделение вещи"],["photo","Результаты по фото"],
-  ["wishlist","Вишлист","Вишлист и корзина"],["share","Поделиться вишлистом"],["partner","Доступ партнёру"],["guest","Вам прислали вишлист"],["cart","Корзина"],
-  ["profile","Профиль","Аккаунт"],["alerts","Слежу за ценой"],["telegram","Подключение Telegram"],["pro","FINDLY PRO"]
+  ["landing","Головна сайту","Вхід"],["city","Вибір міста"],["login","Вхід і реєстрація"],["menu","Меню"],
+  ["search","Пошук","Пошук"],["parse","Розбір запиту"],["results","Результати"],["product","Картка товару"],["sizes","Розмірна сітка"],
+  ["assistant","Асистент","AI-функції"],["looks","Образи: квіз"],["camera","Пошук за фото"],["crop","Виділення речі"],["photo","Результати за фото"],
+  ["wishlist","Вішліст","Вішліст і кошик"],["share","Поділитися вішлістом"],["partner","Доступ партнеру"],["guest","Вам надіслали вішліст"],["cart","Кошик"],
+  ["profile","Профіль","Акаунт"],["alerts","Стежу за ціною"],["telegram","Підключення Telegram"],["pro","FINDLY PRO"]
 ];
 const MODAL_SCREENS={city:["landing","city"],login:["search","login"],menu:["search","menu"],sizes:["product","sizes"],share:["wishlist","share"],telegram:["product","tg"]};
 const TAB_OF={search:"search",parse:"search",results:"search",product:"search",photo:"search",assistant:"looks",looks:"looks",wishlist:"wish",cart:"cart",alerts:"wish",profile:"wish"};
@@ -453,21 +453,21 @@ const TAB_OF={search:"search",parse:"search",results:"search",product:"search",p
 /* ---------- state ---------- */
 const S={
   route:"landing",hist:[],city:null,cityAsked:false,logged:false,pro:false,tg:false,
-  query:"голубые широкие джинсы с высокой посадкой, чтобы выглядели дорого, до 2 500 ₴",
+  query:"блакитні широкі джинси з високою посадкою, щоб виглядали дорого, до 2 500 ₴",
   removed:new Set(),sort:"match",pid:"j1",view:0,size:null,
   wish:new Set(["j1","c2","j3","bl1"]),cart:[],
   tracked:new Map([["j1",1500],["c2",2800]]),
   chosen:new Set(["c2"]),myGift:null,guestMode:"link",
   photoTab:"similar",camCat:"all",cropSel:"coat",upload:null,upCat:"coat",
-  wishTab:"mine",partner:null,occasion:"День рождения",
+  wishTab:"mine",partner:null,occasion:"День народження",
   chat:[],chatBusy:false,lastQ:null,
   quiz:{step:0,a:{}},quizMsgs:null,look:null,
-  budget:5000,styles:new Set(["Минимализм","Классика"]),favStores:new Set(["Kasta","COS","Answear"]),sizes:{top:"S",bottom:"27",shoes:"38"},
+  budget:5000,styles:new Set(["Мінімалізм","Класика"]),favStores:new Set(["Kasta","COS","Answear"]),sizes:{top:"S",bottom:"27",shoes:"38"},
   modal:null,after:null,scene:0
 };
 
 /* ---------- helpers ---------- */
-const fmt=n=>Math.round(n).toLocaleString("ru-RU").replace(/\s/g," ")+" ₴";
+const fmt=n=>Math.round(n).toLocaleString("uk-UA").replace(/\s/g," ")+" ₴";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const ms=(n,c="")=>`<span class="ms ${c}">${n}</span>`;
 const plural=(n,a,b,c)=>{const m=n%10,h=n%100;return m===1&&h!==11?a:m>=2&&m<=4&&(h<12||h>14)?b:c};
@@ -573,7 +573,7 @@ function searchQ(q,removed=new Set(),sort="match"){
   const r=parseQuery(q),rm=removed;
   const eff={cat:rm.has("cat")?null:r.cat,color:rm.has("color")?null:r.color,attrs:r.attrs.filter(a=>!rm.has("a:"+a)),budget:rm.has("budget")?null:r.budget};
   let list=P.filter(p=>!eff.cat||p.cat===eff.cat);
-  if(eff.color){const c=list.filter(p=>p.color===eff.color||(eff.color==="голубой"&&p.color==="синий"));if(c.length)list=c}
+  if(eff.color){const c=list.filter(p=>p.color===eff.color||(eff.color==="блакитний"&&p.color==="синій"));if(c.length)list=c}
   let over=false;
   if(eff.budget){const b=list.filter(p=>p.price<=eff.budget);if(b.length)list=b;else over=true}
   if(!r.cat&&!r.color&&!r.attrs.length)list=P.slice(0,8);
@@ -596,10 +596,10 @@ function resume(){const a=S.after;S.after=null;S.modal=null;renderModal();if(a)n
 function header(over=false){
   return `<header class="hdr ${over?"over":""}"><div><button class="iconbtn" data-act="menu" type="button" aria-label="Меню">${ms("menu")}</button></div>
     <button class="logo" data-act="home" type="button">FINDLY</button>
-    <div class="right">${S.logged?`<button data-go="profile" type="button" aria-label="Профиль"><span class="avatar">А</span></button>`:`<button class="signin" data-act="login" type="button">Войти</button>`}</div></header>`;
+    <div class="right">${S.logged?`<button data-go="profile" type="button" aria-label="Профіль"><span class="avatar">А</span></button>`:`<button class="signin" data-act="login" type="button">Увійти</button>`}</div></header>`;
 }
-function heart(id){const on=S.logged&&S.wish.has(id);return `<button class="heart ${on?"on":""}" data-wish="${id}" type="button" aria-label="${on?"Убрать из вишлиста":"В вишлист"}" aria-pressed="${on}">${ms("favorite")}</button>`}
-function cartBtn(id){const c=inCart(id);return `<button class="addcart ${c?"in":""}" data-cart="${id}" type="button">${c?ms("check")+"В корзине":"В корзину"}</button>`}
+function heart(id){const on=S.logged&&S.wish.has(id);return `<button class="heart ${on?"on":""}" data-wish="${id}" type="button" aria-label="${on?"Прибрати з вішліста":"У вішліст"}" aria-pressed="${on}">${ms("favorite")}</button>`}
+function cartBtn(id){const c=inCart(id);return `<button class="addcart ${c?"in":""}" data-cart="${id}" type="button">${c?ms("check")+"У кошику":"У кошик"}</button>`}
 function card(p,{match=null,badge="",note="",cart=true}={}){
   const extra=heart(p.id)+(badge?`<span class="badge">${badge}</span>`:"")+(p.old&&!match&&!badge?`<span class="badge lt btm">−${fmt(p.old-p.price)}</span>`:"");
   return `<article class="card"><div class="open" data-pid="${p.id}" tabindex="0" role="button" aria-label="${esc(p.name)}">${tile(p,extra)}
@@ -610,15 +610,15 @@ function card(p,{match=null,badge="",note="",cart=true}={}){
 function navbar(){
   const t=TAB_OF[S.route];if(!t)return "";
   const n=S.cart.length;
-  const it=[["search","search","Поиск","search"],["looks","auto_awesome","Образы","looks"],["wish","favorite","Вишлист","wishlist"],["cart","shopping_bag","Корзина","cart"]];
+  const it=[["search","search","Пошук","search"],["looks","auto_awesome","Образи","looks"],["wish","favorite","Вішліст","wishlist"],["cart","shopping_bag","Кошик","cart"]];
   return `<nav class="nav">${it.map(([k,i,l,g])=>`<button class="${t===k?"on":""}" data-go="${g}" type="button">${ms(i,t===k?"fill":"")}${l.toUpperCase()}${k==="cart"&&n?`<span class="cnt">${n}</span>`:""}</button>`).join("")}</nav>`;
 }
 function back(label="Назад"){return `<div class="pad" style="height:48px;display:flex;align-items:center"><button class="link" data-back type="button" style="border:0;padding:0;display:flex;gap:6px;align-items:center">${ms("arrow_back")}${label}</button></div>`}
 function footer(){
-  return `<footer class="foot"><div class="pad stack g8"><span class="logo" style="padding-left:0;font-size:26px">FINDLY</span><p style="margin:0;color:rgba(246,240,232,.7);font-style:italic">AI-поиск одежды по магазинам Украины</p>
-    <div class="eyebrow mt24">Контакты</div>
-    <div class="rows"><div><span>Горячая линия</span><span class="copy">0 800 000 000</span></div><div><span>Telegram</span><span class="copy">@findly_ua</span></div><div><span>Instagram</span><span class="copy">@findly.ua</span></div><div><span>Почта</span><span class="copy">hello@findly.ua</span></div></div>
-    <p class="small mt24" style="margin-bottom:0;color:rgba(246,240,232,.5)">© 2026 FINDLY · Покупка и оплата проходят на сайтах магазинов</p></div></footer>`;
+  return `<footer class="foot"><div class="pad stack g8"><span class="logo" style="padding-left:0;font-size:26px">FINDLY</span><p style="margin:0;color:rgba(246,240,232,.7);font-style:italic">AI-пошук одягу в магазинах України</p>
+    <div class="eyebrow mt24">Контакти</div>
+    <div class="rows"><div><span>Гаряча лінія</span><span class="copy">0 800 000 000</span></div><div><span>Telegram</span><span class="copy">@findly_ua</span></div><div><span>Instagram</span><span class="copy">@findly.ua</span></div><div><span>Пошта</span><span class="copy">hello@findly.ua</span></div></div>
+    <p class="small mt24" style="margin-bottom:0;color:rgba(246,240,232,.5)">© 2026 FINDLY · Покупка й оплата відбуваються на сайтах магазинів</p></div></footer>`;
 }
 
 /* ---------- screens ---------- */
@@ -627,65 +627,65 @@ const V={};
 V.landing=()=>`<div class="scr">
   <section class="hero" id="top">${[0,1,2].map(i=>`<div class="scene ${S.scene===i?"on":""}" data-scene="${i}">${boutique(i)}</div>`).join("")}
     ${header(true)}
-    <div class="copy"><span class="eyebrow" style="color:var(--champ)">AI-поиск одежды</span><div class="wordmark">FINDLY</div><div class="tag">Опиши, что хочешь. Мы найдём.</div>
-      <div class="ctas"><button class="btn light" data-go="search" type="button">Начать</button><button class="btn" data-act="story" type="button" style="background:transparent;box-shadow:inset 0 0 0 1px rgba(246,240,232,.55)">Наша история</button></div>
+    <div class="copy"><span class="eyebrow" style="color:var(--champ)">AI-пошук одягу</span><div class="wordmark">FINDLY</div><div class="tag">Опиши, що хочеш. Ми знайдемо.</div>
+      <div class="ctas"><button class="btn light" data-go="search" type="button">Почати</button><button class="btn" data-act="story" type="button" style="background:transparent;box-shadow:inset 0 0 0 1px rgba(246,240,232,.55)">Наша історія</button></div>
       <div class="dots">${[0,1,2].map(i=>`<i class="${S.scene===i?"on":""}"></i>`).join("")}</div></div>
   </section>
-  <section class="pad block stack g16"><span class="eyebrow bur">О сервисе</span><h2 class="h1">Одна строка поиска <i>вместо десяти</i> магазинов</h2>
-    <p class="lead">FINDLY ищет одежду сразу по Kasta, Intertop, Answear, Mango, COS и другим магазинам Украины. Вы описываете вещь своими словами или показываете фото, а мы находим её, сравниваем цены и объясняем, почему она подходит.</p></section>
-  <section class="story" id="story"><div class="pad stack g16"><span class="eyebrow">Наша история</span><h2 class="h1">Всё началось <i>со скриншота</i></h2>
-    <p class="lead">Однажды мы увидели в TikTok идеальные джинсы и потратили целый вечер, чтобы найти похожие в Украине. Десятки вкладок, разные фильтры, разные названия одного и того же кроя.</p>
-    <p class="lead">Так появилась идея FINDLY: сервис, который понимает обычные слова и фото, знает украинские магазины и сам находит лучшую цену.</p>
-    <p class="quote">«Мы хотим, чтобы найти вещь мечты было так же просто, как её описать».</p></div></section>
-  <section class="pad block stack g16"><span class="eyebrow bur">Как это работает</span>
-    <div class="steps">${[["Опишите вещь","Словами, как подруге: цвет, крой, повод и бюджет. Или загрузите фото."],["Сравните варианты","Похожие вещи из разных магазинов, процент совпадения и лучшая цена."],["Покупайте в магазине","Добавьте в корзину и переходите в магазин. Для вас цена та же."]].map(([t,d],i)=>`<div class="step"><span class="n">${i+1}</span><span class="h3">${t}</span><span class="muted">${d}</span></div>`).join("")}</div></section>
-  <section class="pad block stack g16"><span class="eyebrow bur">Что умеет FINDLY</span>
-    <div class="caps">${[["search","Поиск словами","Бесплатно"],["photo_camera","Поиск по фото","PRO"],["auto_awesome","AI-ассистент","PRO"],["checkroom","Образы под повод","Бесплатно"],["favorite","Вишлист для партнёра","PRO"],["notifications","Цены в Telegram","PRO"]].map(([i,t,l])=>`<div>${ms(i)}<span class="h3" style="font-size:18px">${t}</span><span class="pro-tag">${l}</span></div>`).join("")}</div></section>
-  <section class="pad block stack g16" style="text-align:center;align-items:center;padding-bottom:0"><div class="rule"></div><h2 class="h2">Готовы найти свою вещь?</h2><p class="lead">Регистрация не нужна, чтобы начать.</p><button class="btn" data-go="search" type="button" style="max-width:300px">Начать</button></section>
+  <section class="pad block stack g16"><span class="eyebrow bur">Про сервіс</span><h2 class="h1">Один рядок пошуку <i>замість десяти</i> магазинів</h2>
+    <p class="lead">FINDLY шукає одяг одразу в Kasta, Intertop, Answear, Mango, COS та інших магазинах України. Ви описуєте річ своїми словами або показуєте фото, а ми знаходимо її, порівнюємо ціни й пояснюємо, чому вона підходить.</p></section>
+  <section class="story" id="story"><div class="pad stack g16"><span class="eyebrow">Наша історія</span><h2 class="h1">Усе почалося <i>зі скриншота</i></h2>
+    <p class="lead">Одного разу ми побачили в TikTok ідеальні джинси й витратили цілий вечір, щоб знайти схожі в Україні. Десятки вкладок, різні фільтри, різні назви того самого крою.</p>
+    <p class="lead">Так з’явилася ідея FINDLY: сервіс, який розуміє звичайні слова й фото, знає українські магазини та сам знаходить найкращу ціну.</p>
+    <p class="quote">«Ми хочемо, щоб знайти річ мрії було так само просто, як її описати».</p></div></section>
+  <section class="pad block stack g16"><span class="eyebrow bur">Як це працює</span>
+    <div class="steps">${[["Опишіть річ","Словами, як подрузі: колір, крій, привід і бюджет. Або завантажте фото."],["Порівняйте варіанти","Схожі речі з різних магазинів, відсоток збігу та найкраща ціна."],["Купуйте в магазині","Додайте в кошик і переходьте в магазин. Для вас ціна та сама."]].map(([t,d],i)=>`<div class="step"><span class="n">${i+1}</span><span class="h3">${t}</span><span class="muted">${d}</span></div>`).join("")}</div></section>
+  <section class="pad block stack g16"><span class="eyebrow bur">Що вміє FINDLY</span>
+    <div class="caps">${[["search","Пошук словами","Безкоштовно"],["photo_camera","Пошук за фото","PRO"],["auto_awesome","AI-асистент","PRO"],["checkroom","Образи під привід","Безкоштовно"],["favorite","Вішліст для партнера","PRO"],["notifications","Ціни в Telegram","PRO"]].map(([i,t,l])=>`<div>${ms(i)}<span class="h3" style="font-size:18px">${t}</span><span class="pro-tag">${l}</span></div>`).join("")}</div></section>
+  <section class="pad block stack g16" style="text-align:center;align-items:center;padding-bottom:0"><div class="rule"></div><h2 class="h2">Готові знайти свою річ?</h2><p class="lead">Щоб почати, реєстрація не потрібна.</p><button class="btn" data-go="search" type="button" style="max-width:300px">Почати</button></section>
   ${footer()}</div>`;
 
 V.search=()=>{
   const now=["j1","c1","bg1","k1"].map(i=>byId[i]),drop=P.filter(p=>p.old).slice(0,4);
-  return `<div class="scr">${header()}${S.city?`<div class="citybar">Доставка: ${S.city} · <button data-act="city" type="button">изменить</button></div>`:""}<div class="pad">
-    <div class="eyebrow acc mt24">${ms("auto_awesome")} Поиск по всем магазинам</div>
-    <h1 class="h1 mt12">Что ищем <i>сегодня?</i></h1>
-    <form id="home-search" class="search mt24" autocomplete="off">${ms("search")}<input id="q" placeholder="Например: голубые широкие джинсы до 2 500 ₴" aria-label="Что ищем"><button class="iconbtn" data-act="camera" type="button" aria-label="Поиск по фото">${ms("photo_camera")}</button></form>
-    <div class="chips row mt12">${["Чёрное платье миди","Бордовое пальто","Белые кроссовки","Тренч до 3 000 ₴"].map(c=>`<button class="chip" data-q="${c}" type="button">${c}</button>`).join("")}</div>
-    <button class="feature mt24" data-act="assistant" type="button" style="text-align:left;width:100%;flex-direction:row;align-items:center"><span class="tgava">F</span><span class="stack g4" style="flex:1"><span class="h3" style="font-size:18px">Спросить ассистента</span><span class="small muted">«Что надеть на свадьбу подруги в ноябре?»</span></span>${ms("chevron_right")}</button>
-    <div class="sec"><span class="eyebrow ink">Сейчас ищут</span><span class="eyebrow acc">Тренды недели</span></div>
+  return `<div class="scr">${header()}${S.city?`<div class="citybar">Доставка: ${S.city} · <button data-act="city" type="button">змінити</button></div>`:""}<div class="pad">
+    <div class="eyebrow acc mt24">${ms("auto_awesome")} Пошук у всіх магазинах</div>
+    <h1 class="h1 mt12">Що шукаємо <i>сьогодні?</i></h1>
+    <form id="home-search" class="search mt24" autocomplete="off">${ms("search")}<input id="q" placeholder="Наприклад: блакитні широкі джинси до 2 500 ₴" aria-label="Що шукаємо"><button class="iconbtn" data-act="camera" type="button" aria-label="Пошук за фото">${ms("photo_camera")}</button></form>
+    <div class="chips row mt12">${["Чорна сукня міді","Бордове пальто","Білі кросівки","Тренч до 3 000 ₴"].map(c=>`<button class="chip" data-q="${c}" type="button">${c}</button>`).join("")}</div>
+    <button class="feature mt24" data-act="assistant" type="button" style="text-align:left;width:100%;flex-direction:row;align-items:center"><span class="tgava">F</span><span class="stack g4" style="flex:1"><span class="h3" style="font-size:18px">Запитати асистентку</span><span class="small muted">«Що вдягнути на весілля подруги в листопаді?»</span></span>${ms("chevron_right")}</button>
+    <div class="sec"><span class="eyebrow ink">Зараз шукають</span><span class="eyebrow acc">Тренди тижня</span></div>
     <div class="carousel">${now.map(p=>card(p)).join("")}</div>
-    <div class="sec"><span class="eyebrow ink">Подешевело</span></div>
+    <div class="sec"><span class="eyebrow ink">Подешевшало</span></div>
     <div class="grid">${drop.map(p=>card(p)).join("")}</div>
-    <div class="sec"><span class="eyebrow ink">Образ недели</span></div>
+    <div class="sec"><span class="eyebrow ink">Образ тижня</span></div>
     <button data-go="looks" type="button" class="art" style="display:block;width:100%;position:relative;aspect-ratio:4/5;max-width:100%;text-align:left;background:linear-gradient(170deg,#5a2430,#24150f);overflow:hidden">
       <div class="board" style="position:absolute;inset:8% 14% 30%;background:transparent;gap:10px">${["c5","s1","p3","l1"].map(i=>`<div class="tile" style="background:rgba(246,240,232,.93)">${garment(byId[i].shape,byId[i].tone,{floor:false,scale:.9})}</div>`).join("")}</div>
-      <div style="position:absolute;left:20px;right:20px;bottom:20px;color:#f6f0e8" class="stack g8"><span class="eyebrow" style="color:var(--champ)">Капсула из 4 вещей</span><span class="h2">Бордо и кашемир</span><span class="link" style="align-self:flex-start;color:#f6f0e8">Собрать свой образ</span></div></button>
+      <div style="position:absolute;left:20px;right:20px;bottom:20px;color:#f6f0e8" class="stack g8"><span class="eyebrow" style="color:var(--champ)">Капсула з 4 речей</span><span class="h2">Бордо й кашемір</span><span class="link" style="align-self:flex-start;color:#f6f0e8">Зібрати свій образ</span></div></button>
   </div>${footer()}</div>`;
 };
 
 V.parse=()=>{const {r,list}=search();
   return `<div class="scr">${header()}${back()}
-  <div class="pad"><div class="panel"><span class="eyebrow">Ваш запрос</span><p style="margin:6px 0 0;font-size:18px;font-style:italic">«${esc(S.query)}»</p></div></div>
+  <div class="pad"><div class="panel"><span class="eyebrow">Ваш запит</span><p style="margin:6px 0 0;font-size:18px;font-style:italic">«${esc(S.query)}»</p></div></div>
   <div class="line mt16"></div>
-  <div class="pad mt24 stack g8"><h2 class="h1" style="font-style:italic">Разбираем запрос…</h2><p class="lead">Смотрим на вещь, цвет, крой и бюджет</p></div>
-  <div class="pad mt24"><div class="between" style="margin-bottom:12px"><span class="eyebrow ink">Что мы поняли</span><span class="small muted">${r.chips.length} ${plural(r.chips.length,"параметр","параметра","параметров")}</span></div>
-    <div class="chips">${r.chips.length?r.chips.map((c,i)=>`<span class="chip parse" style="animation-delay:${.2+i*.14}s">${ms("check")}${esc(c.l)}</span>`).join(""):`<span class="small muted">Запрос общий, покажем популярное</span>`}</div></div>
-  <div class="pad mt24"><div class="panel between"><div><span class="eyebrow">Ищем в магазинах</span><p style="margin:6px 0 0">Kasta, Intertop, Answear, Mango, COS</p></div><div style="text-align:right"><div class="h2 num" id="cnt">0</div><span class="small muted">вариантов</span></div></div></div>
-  <div class="pad mt24" style="padding-bottom:28px"><button class="btn" data-go="results" type="button">Показать ${list.length} ${plural(list.length,"вещь","вещи","вещей")}</button><p class="small muted mt12" style="text-align:center;font-style:italic">Откроем результаты автоматически</p></div></div>`;
+  <div class="pad mt24 stack g8"><h2 class="h1" style="font-style:italic">Розбираємо запит…</h2><p class="lead">Дивимося на річ, колір, крій і бюджет</p></div>
+  <div class="pad mt24"><div class="between" style="margin-bottom:12px"><span class="eyebrow ink">Що ми зрозуміли</span><span class="small muted">${r.chips.length} ${plural(r.chips.length,"параметр","параметри","параметрів")}</span></div>
+    <div class="chips">${r.chips.length?r.chips.map((c,i)=>`<span class="chip parse" style="animation-delay:${.2+i*.14}s">${ms("check")}${esc(c.l)}</span>`).join(""):`<span class="small muted">Запит загальний, покажемо популярне</span>`}</div></div>
+  <div class="pad mt24"><div class="panel between"><div><span class="eyebrow">Шукаємо в магазинах</span><p style="margin:6px 0 0">Kasta, Intertop, Answear, Mango, COS</p></div><div style="text-align:right"><div class="h2 num" id="cnt">0</div><span class="small muted">варіантів</span></div></div></div>
+  <div class="pad mt24" style="padding-bottom:28px"><button class="btn" data-go="results" type="button"> Показати ${list.length} ${plural(list.length,"річ","речі","речей")}</button><p class="small muted mt12" style="text-align:center;font-style:italic">Відкриємо результати автоматично</p></div></div>`;
 };
 
 V.results=()=>{const {r,list,min,over,stores}=search();
   return `<div class="scr">${header()}<div class="pad stack g8" style="padding-top:14px">
     <button class="small muted" data-go="search" type="button" style="text-align:left;display:flex;gap:6px;align-items:center;font-style:italic">${ms("search")}<span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">«${esc(S.query)}»</span></button>
-    <span class="eyebrow acc">FINDLY понял так</span>
-    <div class="chips row">${r.chips.map(c=>`<button class="chip ${S.removed.has(c.k)?"":"on"}" data-chip="${c.k}" type="button" aria-pressed="${!S.removed.has(c.k)}">${esc(c.l)}${ms(S.removed.has(c.k)?"add":"close")}</button>`).join("")||`<span class="small muted">Без фильтров</span>`}</div></div>
+    <span class="eyebrow acc">FINDLY зрозумів так</span>
+    <div class="chips row">${r.chips.map(c=>`<button class="chip ${S.removed.has(c.k)?"":"on"}" data-chip="${c.k}" type="button" aria-pressed="${!S.removed.has(c.k)}">${esc(c.l)}${ms(S.removed.has(c.k)?"add":"close")}</button>`).join("")||`<span class="small muted">Без фільтрів</span>`}</div></div>
   <div class="hair mt16"></div>
-  <div class="pad between" style="height:48px"><span class="small muted num">${list.length} ${plural(list.length,"вещь","вещи","вещей")} из ${stores} ${plural(stores,"магазина","магазинов","магазинов")}</span>
-    <label class="eyebrow ink" style="display:flex;align-items:center;gap:4px">Сортировка<select id="sort" style="border:0;background:transparent;font:600 12px/1 var(--serif);letter-spacing:.12em;text-transform:uppercase;color:var(--bur)"><option value="match" ${S.sort==="match"?"selected":""}>совпадение</option><option value="price" ${S.sort==="price"?"selected":""}>цена</option></select></label></div>
+  <div class="pad between" style="height:48px"><span class="small muted num">${list.length} ${plural(list.length,"річ","речі","речей")} з ${stores} ${plural(stores,"магазину","магазинів","магазинів")}</span>
+    <label class="eyebrow ink" style="display:flex;align-items:center;gap:4px">Сортування<select id="sort" style="border:0;background:transparent;font:600 12px/1 var(--serif);letter-spacing:.12em;text-transform:uppercase;color:var(--bur)"><option value="match" ${S.sort==="match"?"selected":""}>збіг</option><option value="price" ${S.sort==="price"?"selected":""}>ціна</option></select></label></div>
   <div class="hair"></div>
-  ${over?`<div class="pad mt16"><div class="panel small">В этот бюджет ничего не нашли. Показываем ближайшие варианты.</div></div>`:""}
-  <div class="pad mt24" style="padding-bottom:28px"><div class="grid">${list.map(x=>card(x.p,{match:x.m,badge:x.p.price===min&&list.length>1?"Лучшая цена":""})).join("")}</div>
-  <p class="small muted mt32" style="text-align:center;font-style:italic">Цены обновлены сегодня · Доставка: ${S.city||"по Украине"}</p></div></div>`;
+  ${over?`<div class="pad mt16"><div class="panel small">У цей бюджет нічого не знайшли. Показуємо найближчі варіанти.</div></div>`:""}
+  <div class="pad mt24" style="padding-bottom:28px"><div class="grid">${list.map(x=>card(x.p,{match:x.m,badge:x.p.price===min&&list.length>1?"Найкраща ціна":""})).join("")}</div>
+  <p class="small muted mt32" style="text-align:center;font-style:italic">Ціни оновлено сьогодні · Доставка: ${S.city||"по Україні"}</p></div></div>`;
 };
 
 function offers(p){const o=Object.keys(STORES).filter(s=>s!==p.store).sort((a,b)=>hashN(a+p.id)-hashN(b+p.id)).slice(0,2);return [{s:p.store,price:p.price,best:true},{s:o[0],price:p.price+350},{s:o[1],price:p.price+600}]}
@@ -694,55 +694,55 @@ V.product=()=>{
   const views=[p.tone,shade(p.tone,.12),shade(p.tone,-.1)];
   const comp=P.filter(x=>x.cat!==p.cat&&x.id!==p.id).sort((a,b)=>hashN(a.id+p.id)-hashN(b.id+p.id)).slice(0,2);
   return `<div class="scr">
-  <div class="gal"><div class="gtop"><button class="iconbtn" data-back type="button" aria-label="Назад">${ms("arrow_back")}</button><button class="iconbtn" data-act="share-item" type="button" aria-label="Поделиться">${ms("ios_share")}</button></div>
+  <div class="gal"><div class="gtop"><button class="iconbtn" data-back type="button" aria-label="Назад">${ms("arrow_back")}</button><button class="iconbtn" data-act="share-item" type="button" aria-label="Поділитися">${ms("ios_share")}</button></div>
     ${p.old?`<span class="badge" style="top:56px;left:16px">−${Math.round((1-p.price/p.old)*100)}%</span>`:""}
     ${garment(p.shape,views[S.view],{cls:"rv",scale:.95})}
     <div class="prog">${views.map((_,i)=>`<button data-view="${i}" class="${i===S.view?"on":""}" type="button" aria-label="Фото ${i+1}"><i></i></button>`).join("")}</div></div>
   <div class="pad stack g12" style="padding-block:22px 22px">
     <span class="store">${p.store}</span><h1 class="h2">${esc(p.name)}</h1>
     <div style="display:flex;gap:10px;align-items:baseline"><span class="price" style="font-size:28px">${fmt(p.price)}</span>${p.old?`<span class="old" style="font-size:16px">${fmt(p.old)}</span>`:""}</div>
-    <div class="between mt8"><span class="eyebrow ink">Размер${sz.length>1?": "+cur:""}</span><button class="link" data-act="sizes" type="button">Размерная сетка</button></div>
+    <div class="between mt8"><span class="eyebrow ink">Розмір${sz.length>1?": "+cur:""}</span><button class="link" data-act="sizes" type="button">Розмірна сітка</button></div>
     <div class="sizes">${sz.map((s,i)=>`<button class="${cur===s||sz.length===1?"on":""}" data-size="${s}" type="button" ${i===sz.length-1&&sz.length>2?"disabled":""}>${s}</button>`).join("")}</div>
-    <p class="small muted" style="margin:0;font-style:italic">${sz.length>2?"Размер "+sz[sz.length-1]+" закончился · ":""}доставка в ${S.city||"ваш город"} 1–3 дня</p>
+    <p class="small muted" style="margin:0;font-style:italic">${sz.length>2?"Розмір "+sz[sz.length-1]+" закінчився · ":""}доставка в ${S.city||"ваше місто"} 1–3 дні</p>
   </div>
-  <div class="pad"><div class="panel sand stack g8"><span class="eyebrow ink">Описание от магазина</span><p style="margin:0">${DESC[p.cat]}</p><p class="small muted" style="margin:0">Состав: ${p.mat}</p></div></div>
+  <div class="pad"><div class="panel sand stack g8"><span class="eyebrow ink">Опис від магазину</span><p style="margin:0">${DESC[p.cat]}</p><p class="small muted" style="margin:0">Склад: ${p.mat}</p></div></div>
   <div class="pad stack g12" style="padding-block:26px 0">
     <a class="btn ghost" href="${STORES[p.store]}" target="_blank" rel="noopener">Перейти в магазин ${p.store} ${ms("north_east")}</a>
-    <button class="btn line" data-act="track" type="button">${ms(tr?"notifications_active":"notifications",tr?"fill":"")} ${tr?"Слежу за ценой":"Следить за ценой в Telegram"}</button></div>
-  <div class="pad" style="padding-block:28px"><div class="between" style="margin-bottom:12px"><span class="eyebrow ink">Эта вещь в других магазинах</span></div>
-    <div class="rows">${offers(p).map(o=>`<div><div class="stack g4"><span style="font-weight:600">${o.s}</span><span class="small ${o.best?"note":"muted"}">${o.best?"Самая низкая цена":"дороже на "+fmt(o.price-p.price)}</span></div><a href="${STORES[o.s]}" target="_blank" rel="noopener" style="display:flex;gap:10px;align-items:center"><span class="price">${fmt(o.price)}</span>${ms("north_east")}</a></div>`).join("")}</div></div>
-  <div class="pad" style="padding-bottom:28px"><div class="between" style="margin-bottom:14px"><span class="eyebrow ink">Дополнить образ</span><button class="link" data-go="looks" type="button">Образы</button></div>
+    <button class="btn line" data-act="track" type="button">${ms(tr?"notifications_active":"notifications",tr?"fill":"")} ${tr?"Стежу за ціною":"Стежити за ціною в Telegram"}</button></div>
+  <div class="pad" style="padding-block:28px"><div class="between" style="margin-bottom:12px"><span class="eyebrow ink">Ця річ в інших магазинах</span></div>
+    <div class="rows">${offers(p).map(o=>`<div><div class="stack g4"><span style="font-weight:600">${o.s}</span><span class="small ${o.best?"note":"muted"}">${o.best?"Найнижча ціна":"дорожче на "+fmt(o.price-p.price)}</span></div><a href="${STORES[o.s]}" target="_blank" rel="noopener" style="display:flex;gap:10px;align-items:center"><span class="price">${fmt(o.price)}</span>${ms("north_east")}</a></div>`).join("")}</div></div>
+  <div class="pad" style="padding-bottom:28px"><div class="between" style="margin-bottom:14px"><span class="eyebrow ink">Доповнити образ</span><button class="link" data-go="looks" type="button">Образи</button></div>
     <div class="grid">${comp.map(x=>card(x)).join("")}</div></div>
-  <div class="tray"><button class="btn line sq" data-wish="${p.id}" type="button" aria-label="${wish?"Убрать из вишлиста":"В вишлист"}">${ms("favorite",wish?"fill":"")}</button>
-    <button class="btn" data-cart="${p.id}" type="button">${inCart(p.id)?ms("check")+" В корзине":"В корзину · "+fmt(p.price)}</button></div></div>`;
+  <div class="tray"><button class="btn line sq" data-wish="${p.id}" type="button" aria-label="${wish?"Прибрати з вішліста":"У вішліст"}">${ms("favorite",wish?"fill":"")}</button>
+    <button class="btn" data-cart="${p.id}" type="button">${inCart(p.id)?ms("check")+" У кошику":"У кошик · "+fmt(p.price)}</button></div></div>`;
 };
 
 /* assistant */
 function aiMsg(m){
-  if(m.typing)return `<div class="msg ai"><div class="who"><i>F</i>Ассистент</div><span class="typing"><i></i><i></i><i></i></span></div>`;
+  if(m.typing)return `<div class="msg ai"><div class="who"><i>F</i>Асистентка</div><span class="typing"><i></i><i></i><i></i></span></div>`;
   if(m.me)return `<div class="msg me">${esc(m.text)}</div>`;
-  return `<div class="msg ai ${m.items?"wide":""}">${m.items?`<div class="panel" style="box-shadow:inset 0 0 0 1px var(--line)">`:""}<div class="who"><i>F</i>Ассистент</div><div>${m.text}</div>${m.items?`</div><div class="hscroll mt12">${m.items.map(p=>card(p,{cart:true})).join("")}</div>`:""}
+  return `<div class="msg ai ${m.items?"wide":""}">${m.items?`<div class="panel" style="box-shadow:inset 0 0 0 1px var(--line)">`:""}<div class="who"><i>F</i>Асистентка</div><div>${m.text}</div>${m.items?`</div><div class="hscroll mt12">${m.items.map(p=>card(p,{cart:true})).join("")}</div>`:""}
     ${m.chips?`<div class="chips mt12">${m.chips.map(c=>`<button class="chip" data-ask="${esc(c)}" type="button">${esc(c)}</button>`).join("")}</div>`:""}</div>`;
 }
 V.assistant=()=>{
-  if(!S.chat.length)S.chat=[{text:"Здравствуйте! Я ассистент FINDLY. Опишите, что ищете: вещь, повод, цвет, бюджет. Я найду варианты в магазинах Украины.",chips:["Платье на свадьбу подруги","Тёплое пальто до 5 000 ₴","Белые кроссовки на каждый день"]}];
-  return `<div class="scr">${header()}<div class="pad stack g8" style="padding-top:18px"><span class="eyebrow bur">${ms("auto_awesome")} AI-ассистент · PRO</span><h1 class="h2">Спросите, <i>что надеть</i></h1></div>
+  if(!S.chat.length)S.chat=[{text:"Вітаю! Я асистентка FINDLY. Опишіть, що шукаєте: річ, привід, колір, бюджет. Я знайду варіанти в магазинах України.",chips:["Сукня на весілля подруги","Тепле пальто до 5 000 ₴","Білі кросівки на щодень"]}];
+  return `<div class="scr">${header()}<div class="pad stack g8" style="padding-top:18px"><span class="eyebrow bur">${ms("auto_awesome")} AI-асистентка · PRO</span><h1 class="h2">Запитайте, <i>що вдягнути</i></h1></div>
     <div class="chat" id="chat">${S.chat.map(aiMsg).join("")}</div></div>`;
 };
-function assistantComposer(){return `<div class="composer"><form id="ask" autocomplete="off"><input id="askq" placeholder="Например: платье на свидание до 3 000 ₴" aria-label="Сообщение ассистенту"><button class="send" type="submit" aria-label="Отправить">${ms("arrow_upward")}</button></form></div>`}
+function assistantComposer(){return `<div class="composer"><form id="ask" autocomplete="off"><input id="askq" placeholder="Наприклад: сукня на побачення до 3 000 ₴" aria-label="Повідомлення асистентці"><button class="send" type="submit" aria-label="Надіслати">${ms("arrow_upward")}</button></form></div>`}
 function ask(text){
   if(S.chatBusy||!text.trim())return;
   S.chat.push({me:true,text});S.chat.push({typing:true});S.chatBusy=true;render(true);scrollEnd();
   setTimeout(()=>{
     S.chat.pop();S.chatBusy=false;
     let q=text;
-    if(/дешевле/i.test(text)&&S.lastQ){q=S.lastQ;var sort="price"}
-    else if(/образ/i.test(text)){S.chat.push({text:"Для образа лучше подойдёт раздел «Образы»: там я задам пару вопросов и соберу комплект целиком.",chips:["Платье на свадьбу подруги"]});render(true);scrollEnd();setTimeout(()=>go("looks"),1400);return}
-    else if(/свадьб/i.test(text))q="платье миди премиум до 3000";
+    if(/дешевш|дешевле/i.test(text)&&S.lastQ){q=S.lastQ;var sort="price"}
+    else if(/образ/i.test(text)){S.chat.push({text:"Для образу краще підійде розділ «Образи»: там я поставлю кілька запитань і зберу комплект повністю.",chips:["Сукня на весілля подруги"]});render(true);scrollEnd();setTimeout(()=>go("looks"),1400);return}
+    else if(/весілл|свадьб/i.test(text))q="сукня міді преміум до 3000";
     const res=searchQ(q,new Set(),sort||"match");S.lastQ=q;
-    if(!res.list.length||!res.r.cat&&!res.r.color){S.chat.push({text:"Пока не нашла точного варианта. Уточните, пожалуйста: какая вещь, цвет и бюджет?",chips:["Чёрное платье до 2 500 ₴","Бежевый тренч","Белые кроссовки"]})}
+    if(!res.list.length||!res.r.cat&&!res.r.color){S.chat.push({text:"Поки не знайшла точного варіанта. Уточніть, будь ласка: яка річ, колір і бюджет?",chips:["Чорна сукня до 2 500 ₴","Бежевий тренч","Білі кросівки"]})}
     else{const items=res.list.slice(0,4).map(x=>x.p);
-      S.chat.push({text:`${sort?"Вот варианты подешевле":"Нашла "+res.list.length+" "+plural(res.list.length,"вариант","варианта","вариантов")}${res.r.budget?" в пределах "+fmt(res.r.budget):""}. Самый ${sort?"доступный":"подходящий"} — <b>${esc(items[0].name)}</b> в ${items[0].store} за ${fmt(items[0].price)}.`,items,chips:["Дешевле","Другой цвет","Собрать образ с этим"]})}
+      S.chat.push({text:`${sort?"Ось варіанти дешевші":"Знайшла "+res.list.length+" "+plural(res.list.length,"варіант","варіанти","варіантів")}${res.r.budget?" у межах "+fmt(res.r.budget):""}. Найбільш ${sort?"доступний":"відповідний"} — <b>${esc(items[0].name)}</b> у ${items[0].store} за ${fmt(items[0].price)}.`,items,chips:["Дешевше","Інший колір","Зібрати образ із цим"]})}
     render(true);scrollEnd();
   },1100);
 }
@@ -766,56 +766,56 @@ function buildLook(a){
     if(!done)break}
   return {ids,budget};
 }
-function lookTitle(a){const o={date:"на свидание",office:"в офис",walk:"для прогулки",party:"на вечеринку"}[a.occ],w={warm:"тёплую погоду",cool:"прохладную погоду",cold:"холод"}[a.weather],c={neutral:"нейтральных тонах",dark:"тёмных тонах",wine:"оттенках бордо",light:"светлых тонах"}[a.colors];return `Образ ${o||""}${w?", на "+w:""}${c?", в "+c:""}`}
+function lookTitle(a){const o={date:"на побачення",office:"в офіс",walk:"для прогулянки",party:"на вечірку"}[a.occ],w={warm:"теплу погоду",cool:"прохолодну погоду",cold:"холод"}[a.weather],c={neutral:"нейтральних тонах",dark:"темних тонах",wine:"відтінках бордо",light:"світлих тонах"}[a.colors];return `Образ ${o||""}${w?", на "+w:""}${c?", у "+c:""}`}
 V.looks=()=>{
   const q=S.quiz;
-  let msgs=`<div class="msg ai"><div class="who"><i>F</i>Стилист</div>Соберу готовый образ за пять вопросов. Или просто напишите, что нужно: «на свидание, тёплое, в бордовых тонах, до 5 000 ₴».</div>`;
+  let msgs=`<div class="msg ai"><div class="who"><i>F</i>Стилістка</div>Зберу готовий образ за п’ять запитань. Або просто напишіть, що потрібно: «на побачення, тепле, у бордових тонах, до 5 000 ₴».</div>`;
   QUIZ.forEach((qq,i)=>{if(i>q.step)return;
-    msgs+=`<div class="msg ai"><div class="who"><i>F</i>Стилист · ${i+1} из ${QUIZ.length}</div>${qq.q}${i===q.step&&!S.look?`<div class="chips mt12">${qq.o.map(([k,l])=>`<button class="chip" data-quiz="${qq.k}:${k}" type="button">${l}</button>`).join("")}</div>`:""}</div>`;
+    msgs+=`<div class="msg ai"><div class="who"><i>F</i>Стилістка · ${i+1} з ${QUIZ.length}</div>${qq.q}${i===q.step&&!S.look?`<div class="chips mt12">${qq.o.map(([k,l])=>`<button class="chip" data-quiz="${qq.k}:${k}" type="button">${l}</button>`).join("")}</div>`:""}</div>`;
     if(q.a[qq.k]){const o=qq.o.find(o=>o[0]===q.a[qq.k]);msgs+=`<div class="msg me">${o?o[1]:qq.k==="budget"?"до "+fmt(+q.a.budget):esc(q.a[qq.k])}</div>`}
   });
   if(S.look){const items=S.look.ids.map(i=>byId[i]),total=items.reduce((s,p)=>s+p.price,0),ok=total<=S.look.budget;
-    msgs+=`<div class="msg ai wide"><div class="panel" style="box-shadow:inset 0 0 0 1px var(--line)"><div class="who"><i>F</i>Стилист</div>${esc(lookTitle(q.a))}. Итого ${fmt(total)}${ok?", в бюджете.":", это на "+fmt(total-S.look.budget)+" выше бюджета. Нажмите ⇄ рядом с вещью, чтобы заменить её на более доступную."}</div>
-      <div class="board mt12">${items.map(p=>`<div class="tile">${garment(p.shape,p.tone,{cls:"rv",scale:.86})}</div>`).join("")}${items.length%2?`<div class="tile" style="background:var(--sand);display:grid;place-items:center"><span class="eyebrow">${items.length} ${plural(items.length,"вещь","вещи","вещей")}</span></div>`:""}</div>
+    msgs+=`<div class="msg ai wide"><div class="panel" style="box-shadow:inset 0 0 0 1px var(--line)"><div class="who"><i>F</i>Стилістка</div>${esc(lookTitle(q.a))}. Разом ${fmt(total)}${ok?", у межах бюджету.":", це на "+fmt(total-S.look.budget)+" понад бюджет. Натисніть ⇄ біля речі, щоб замінити її на доступнішу."}</div>
+      <div class="board mt12">${items.map(p=>`<div class="tile">${garment(p.shape,p.tone,{cls:"rv",scale:.86})}</div>`).join("")}${items.length%2?`<div class="tile" style="background:var(--sand);display:grid;place-items:center"><span class="eyebrow">${items.length} ${plural(items.length,"річ","речі","речей")}</span></div>`:""}</div>
       <div class="stack g4 mt12">${items.map((p,i)=>`<div class="item"><button class="stack g4" data-pid="${p.id}" type="button" style="min-width:0;text-align:left"><span class="store">${p.store}</span><span>${esc(p.name)}</span><span class="price small">${fmt(p.price)}</span></button>
-        <div style="display:flex;gap:6px;flex:none"><button class="iconbtn" data-swap="${i}" type="button" aria-label="Заменить" style="box-shadow:inset 0 0 0 1px var(--line);width:38px;height:38px">${ms("sync_alt")}</button><button class="btn sm ${inCart(p.id)?"esp":""}" data-cart="${p.id}" type="button">${inCart(p.id)?"✓":"В корзину"}</button></div></div>`).join("")}</div>
-      <div class="stack g8 mt12"><button class="btn" data-act="look-cart" type="button">Весь образ в корзину · ${fmt(total)}</button><button class="btn line" data-act="look-reset" type="button">Собрать другой</button></div></div>`;}
-  return `<div class="scr">${header()}<div class="pad stack g8" style="padding-top:18px"><span class="eyebrow bur">${ms("checkroom")} Образы</span><h1 class="h2">Соберём образ <i>вместе</i></h1></div>
+        <div style="display:flex;gap:6px;flex:none"><button class="iconbtn" data-swap="${i}" type="button" aria-label="Замінити" style="box-shadow:inset 0 0 0 1px var(--line);width:38px;height:38px">${ms("sync_alt")}</button><button class="btn sm ${inCart(p.id)?"esp":""}" data-cart="${p.id}" type="button">${inCart(p.id)?"✓":"У кошик"}</button></div></div>`).join("")}</div>
+      <div class="stack g8 mt12"><button class="btn" data-act="look-cart" type="button">Весь образ у кошик · ${fmt(total)}</button><button class="btn line" data-act="look-reset" type="button">Зібрати інший</button></div></div>`;}
+  return `<div class="scr">${header()}<div class="pad stack g8" style="padding-top:18px"><span class="eyebrow bur">${ms("checkroom")} Образи</span><h1 class="h2">Зберемо образ <i>разом</i></h1></div>
     <div class="chat" id="chat">${msgs}</div></div>`;
 };
-function looksComposer(){return `<div class="composer"><form id="lookask" autocomplete="off"><input id="lookq" placeholder="Опишите своими словами…" aria-label="Опишите образ"><button class="send" type="submit" aria-label="Отправить">${ms("arrow_upward")}</button></form></div>`}
+function looksComposer(){return `<div class="composer"><form id="lookask" autocomplete="off"><input id="lookq" placeholder="Опишіть своїми словами…" aria-label="Опишіть образ"><button class="send" type="submit" aria-label="Надіслати">${ms("arrow_upward")}</button></form></div>`}
 function lookFromText(t){t=t.toLowerCase();const a={};
-  a.occ=/свидан|ужин|романт/.test(t)?"date":/офис|работ/.test(t)?"office":/вечерин|клуб|праздн/.test(t)?"party":"walk";
-  a.weather=/холод|зим|мороз/.test(t)?"cold":/прохлад|осен|тёпл|тепл/.test(t)?(/тёпл|тепл/.test(t)&&!/прохлад/.test(t)?"cool":"cool"):"warm";
-  a.colors=/бордо|винн|бордов/.test(t)?"wine":/ч[её]рн|т[её]мн/.test(t)?"dark":/светл|бел|пастел/.test(t)?"light":"neutral";
-  a.style=/спорт/.test(t)?"sport":/романт|нежн/.test(t)?"romantic":/минимал/.test(t)?"minimal":"classic";
+  a.occ=/побачен|вечер|романт|свидан/.test(t)?"date":/офіс|робот|офис|работ/.test(t)?"office":/вечірк|клуб|свят|вечерин/.test(t)?"party":"walk";
+  a.weather=/холод|зим|мороз/.test(t)?"cold":/прохолод|осін|тепл|прохлад/.test(t)?(/тепл/.test(t)&&!/прохолод/.test(t)?"cool":"cool"):"warm";
+  a.colors=/бордо|винн|бордов/.test(t)?"wine":/чорн|темн|ч[её]рн|т[её]мн/.test(t)?"dark":/світл|біл|пастел|светл|бел/.test(t)?"light":"neutral";
+  a.style=/спорт/.test(t)?"sport":/романт|ніжн|нежн/.test(t)?"romantic":/мінімал|минимал/.test(t)?"minimal":"classic";
   const m=t.match(/до\s*([\d\s ]{3,})/);a.budget=m?String(parseInt(m[1].replace(/\D/g,""),10)):"5000";
   return a}
 
 /* camera / crop / photo */
 V.camera=()=>`<div class="scr cam">
   <div class="view">${figure()}<div style="position:absolute;inset:0;background:rgba(20,12,10,.25)"></div>
-    <div class="camtop"><button class="glass" data-back type="button">${ms("close")}Закрыть</button><span class="eyebrow" style="color:#c6a779">Поиск по фото · PRO</span><span style="width:84px"></span></div>
+    <div class="camtop"><button class="glass" data-back type="button">${ms("close")}Закрити</button><span class="eyebrow" style="color:#c6a779">Пошук за фото · PRO</span><span style="width:84px"></span></div>
     <div class="reticle"><i></i><i></i><i></i><i></i></div>
-    <div style="position:absolute;left:0;right:0;bottom:7%;text-align:center"><span class="glass" style="text-transform:none;letter-spacing:0;font-weight:500;font-size:15px;font-style:italic">Наведите на вещь или загрузите скриншот</span></div></div>
+    <div style="position:absolute;left:0;right:0;bottom:7%;text-align:center"><span class="glass" style="text-transform:none;letter-spacing:0;font-weight:500;font-size:15px;font-style:italic">Наведіть на річ або завантажте скриншот</span></div></div>
   <div class="console"><div class="row">
     <button class="camopt" data-act="gallery" type="button"><span class="box">${ms("photo_library")}</span>ГАЛЕРЕЯ</button>
     <input id="file" type="file" accept="image/*" hidden>
-    <button class="shutter" data-act="shoot" type="button" aria-label="Снять"><span>СНЯТЬ</span></button>
+    <button class="shutter" data-act="shoot" type="button" aria-label="Зняти"><span>ЗНЯТИ</span></button>
     <button class="camopt" data-act="shoot" type="button"><span class="box">${ms("screenshot_monitor")}</span>СКРИНШОТ</button></div>
-    <p style="text-align:center;margin:18px 0 0;font-size:14px;color:rgba(246,240,232,.5);font-style:italic">Распознаём крой, цвет и фасон за пару секунд</p></div></div>`;
-const DET={coat:{l:"Тренч",n:"Двубортный тренч оверсайз",d:"Верхняя одежда · бежевый",box:"left:19%;top:27%;width:59%;height:44%",ref:"c1"},trousers:{l:"Брюки",n:"Широкие брюки",d:"Брюки · графит",box:"left:30%;top:68%;width:41%;height:28%",ref:"p3"},bag:{l:"Сумка",n:"Сумка-тоут",d:"Аксессуары · бордо",box:"left:68%;top:46%;width:22%;height:18%",ref:"bg1"}};
-const UPCATS=[["coat","Тренч или пальто"],["jeans","Джинсы"],["dress","Платье"],["trousers","Брюки"],["bag","Сумка"]];
+    <p style="text-align:center;margin:18px 0 0;font-size:14px;color:rgba(246,240,232,.5);font-style:italic">Розпізнаємо крій, колір і фасон за кілька секунд</p></div></div>`;
+const DET={coat:{l:"Тренч",n:"Двобортний тренч оверсайз",d:"Верхній одяг · бежевий",box:"left:19%;top:27%;width:59%;height:44%",ref:"c1"},trousers:{l:"Штани",n:"Широкі штани",d:"Штани · графіт",box:"left:30%;top:68%;width:41%;height:28%",ref:"p3"},bag:{l:"Сумка",n:"Сумка-тоут",d:"Аксесуари · бордо",box:"left:68%;top:46%;width:22%;height:18%",ref:"bg1"}};
+const UPCATS=[["coat","Тренч або пальто"],["jeans","Джинси"],["dress","Сукня"],["trousers","Штани"],["bag","Сумка"]];
 V.crop=()=>{const up=S.upload,sel=up?null:DET[S.cropSel];
   return `<div class="scr" style="background:var(--paper)">
   <div class="cropview">${up?`<img src="${up}" alt="Ваше фото">`:figure()}
-    <div class="camtop"><button class="glass" data-back type="button">${ms("arrow_back")}Назад</button><span class="glass" style="text-transform:none;letter-spacing:0;font-size:14px">${up?"Что ищем?":"Нашли 3 вещи"}</span><button class="glass" data-go="camera" type="button">Заново</button></div>
-    ${up?`<div class="det on" style="left:18%;top:20%;width:64%;height:60%"><b>Вещь на фото</b></div>`:Object.entries(DET).map(([k,v])=>`<button class="det ${S.cropSel===k?"on":""}" data-det="${k}" style="${v.box}" type="button" aria-label="${v.l}"><b>${v.l}</b></button>`).join("")}</div>
-  <div class="sheet"><div class="grab"></div><h2 class="h2">Что ищем?</h2><p class="lead mt8">${up?"Подскажите, что за вещь на фото.":"Нажмите на вещь на фото или выберите ниже"}</p>
-    ${sel?`<div class="listrow mt16" style="background:var(--ivory)">${tile(byId[sel.ref])}<div class="stack g4" style="min-width:0"><span class="note">Распознано</span><span class="h3" style="font-size:18px">${sel.n}</span><span class="small muted">${sel.d}</span></div></div>`:""}
+    <div class="camtop"><button class="glass" data-back type="button">${ms("arrow_back")}Назад</button><span class="glass" style="text-transform:none;letter-spacing:0;font-size:14px">${up?"Що шукаємо?":"Знайшли 3 речі"}</span><button class="glass" data-go="camera" type="button">Знову</button></div>
+    ${up?`<div class="det on" style="left:18%;top:20%;width:64%;height:60%"><b>Річ на фото</b></div>`:Object.entries(DET).map(([k,v])=>`<button class="det ${S.cropSel===k?"on":""}" data-det="${k}" style="${v.box}" type="button" aria-label="${v.l}"><b>${v.l}</b></button>`).join("")}</div>
+  <div class="sheet"><div class="grab"></div><h2 class="h2">Що шукаємо?</h2><p class="lead mt8">${up?"Підкажіть, що за річ на фото.":"Натисніть на річ на фото або оберіть нижче"}</p>
+    ${sel?`<div class="listrow mt16" style="background:var(--ivory)">${tile(byId[sel.ref])}<div class="stack g4" style="min-width:0"><span class="note">Розпізнано</span><span class="h3" style="font-size:18px">${sel.n}</span><span class="small muted">${sel.d}</span></div></div>`:""}
     <div class="chips row mt16">${up?UPCATS.map(([k,l])=>`<button class="chip ${S.upCat===k?"on":""}" data-upcat="${k}" type="button">${l}</button>`).join(""):Object.entries(DET).map(([k,v])=>`<button class="chip ${S.cropSel===k?"on":""}" data-det="${k}" type="button">${v.l}</button>`).join("")}</div>
-    <button class="btn mt24" data-act="find-similar" type="button">Найти похожее</button>
-    ${up?"":`<button class="link mt16" data-act="find-look" type="button" style="display:block;margin-inline:auto">Искать весь образ (3 вещи)</button>`}</div></div>`;
+    <button class="btn mt24" data-act="find-similar" type="button">Знайти схоже</button>
+    ${up?"":`<button class="link mt16" data-act="find-look" type="button" style="display:block;margin-inline:auto">Шукати весь образ (3 речі)</button>`}</div></div>`;
 };
 V.photo=()=>{
   const cat=S.upload?S.upCat:S.cropSel;
@@ -826,150 +826,150 @@ V.photo=()=>{
   if(S.photoTab==="quality")list.sort((a,b)=>b.p.q-a.p.q||b.m-a.m);
   const min=Math.min(...list.map(x=>x.p.price));
   const label=cat==="look"?"Весь образ":S.upload?UPCATS.find(c=>c[0]===cat)[1]:DET[cat].n;
-  const note=x=>S.photoTab==="cheap"?(x.p.price<top.p.price?`дешевле на ${fmt(top.p.price-x.p.price)}`:x===top?"самое похожее":""):S.photoTab==="quality"?x.p.mat:"";
+  const note=x=>S.photoTab==="cheap"?(x.p.price<top.p.price?`дешевше на ${fmt(top.p.price-x.p.price)}`:x===top?"найсхожіше":""):S.photoTab==="quality"?x.p.mat:"";
   return `<div class="scr">${header()}${back()}
   <div class="pad"><div class="panel" style="display:flex;gap:14px;align-items:center"><div style="position:relative;width:56px;aspect-ratio:3/4;flex:none;overflow:hidden;background:#2a2622">${S.upload?`<img src="${S.upload}" alt="" style="width:100%;height:100%;object-fit:cover">`:figure()}</div>
-    <div class="stack g4" style="min-width:0"><span class="eyebrow">Ваше фото</span><span class="h3">${label}</span><span class="small muted">${items.length} ${plural(items.length,"вариант","варианта","вариантов")} в ${new Set(items.map(p=>p.store)).size} магазинах</span></div></div></div>
-  <div class="tabs mt16">${[["similar","Похожее"],["cheap","Дешевле"],["quality","Качественнее"]].map(([k,l])=>`<button class="${S.photoTab===k?"on":""}" data-ptab="${k}" type="button">${l}</button>`).join("")}</div>
-  <div class="pad mt24" style="padding-bottom:28px"><div class="grid">${list.map(x=>card(x.p,{match:x.m,badge:S.photoTab==="cheap"&&x.p.price===min?"Лучшая цена":"",note:note(x)})).join("")}</div></div></div>`;
+    <div class="stack g4" style="min-width:0"><span class="eyebrow">Ваше фото</span><span class="h3">${label}</span><span class="small muted">${items.length} ${plural(items.length,"варіант","варіанти","варіантів")} у ${new Set(items.map(p=>p.store)).size} магазинах</span></div></div></div>
+  <div class="tabs mt16">${[["similar","Схоже"],["cheap","Дешевше"],["quality","Якісніше"]].map(([k,l])=>`<button class="${S.photoTab===k?"on":""}" data-ptab="${k}" type="button">${l}</button>`).join("")}</div>
+  <div class="pad mt24" style="padding-bottom:28px"><div class="grid">${list.map(x=>card(x.p,{match:x.m,badge:S.photoTab==="cheap"&&x.p.price===min?"Найкраща ціна":"",note:note(x)})).join("")}</div></div></div>`;
 };
 
 /* wishlist, guest, cart */
 V.wishlist=()=>{
-  if(!S.logged)return `<div class="scr">${header()}<div class="pad" style="padding-top:28px"><h1 class="h1">Вишлист</h1><div class="empty mt24">${ms("favorite")}<span class="h3">Сохраняйте вещи из разных магазинов</span><span>Войдите, чтобы собрать вишлист и делиться им с близкими.</span><button class="btn sm" data-act="login" type="button">Войти</button></div></div></div>`;
+  if(!S.logged)return `<div class="scr">${header()}<div class="pad" style="padding-top:28px"><h1 class="h1">Вішліст</h1><div class="empty mt24">${ms("favorite")}<span class="h3">Зберігайте речі з різних магазинів</span><span>Увійдіть, щоб зібрати вішліст і ділитися ним із близькими.</span><button class="btn sm" data-act="login" type="button">Увійти</button></div></div></div>`;
   const mine=[...S.wish].map(i=>byId[i]).filter(Boolean);
   const body=S.wishTab==="mine"?`
-    <div class="feature mt16"><span class="eyebrow acc">${ms("redeem")} Подарки без спойлеров</span><h2 class="h3">Поделитесь вишлистом</h2>
-      <p class="muted" style="margin:0">Отправьте ссылку близким. Когда кто-то выберет вещь, остальные увидят «Уже выбрано». Что выбрали, вы не узнаете.</p>
-      <button class="btn" data-act="share" type="button">Поделиться вишлистом</button></div>
-    <div class="sec"><span class="eyebrow ink">${mine.length} ${plural(mine.length,"вещь","вещи","вещей")} из разных магазинов</span></div>
-    ${mine.length?`<div class="grid">${mine.map(p=>card(p,{note:p.old?`подешевела на ${fmt(p.old-p.price)}`:""})).join("")}</div>`:`<div class="empty">${ms("favorite")}<span>Здесь появятся вещи, которые вы отметите сердечком.</span><button class="btn sm" data-go="search" type="button">Найти вещь</button></div>`}`
+    <div class="feature mt16"><span class="eyebrow acc">${ms("redeem")} Подарунки без спойлерів</span><h2 class="h3">Поділіться вішлістом</h2>
+      <p class="muted" style="margin:0">Надішліть посилання близьким. Коли хтось обере річ, інші побачать «Вже обрано». Що саме обрали, ви не дізнаєтеся.</p>
+      <button class="btn" data-act="share" type="button">Поділитися вішлістом</button></div>
+    <div class="sec"><span class="eyebrow ink">${mine.length} ${plural(mine.length,"річ","речі","речей")} з різних магазинів</span></div>
+    ${mine.length?`<div class="grid">${mine.map(p=>card(p,{note:p.old?`подешевшала на ${fmt(p.old-p.price)}`:""})).join("")}</div>`:`<div class="empty">${ms("favorite")}<span>Тут з’являться речі, які ви позначите сердечком.</span><button class="btn sm" data-go="search" type="button">Знайти річ</button></div>`}`
   :partnerBody();
   return `<div class="scr">${header()}<div class="pad" style="padding:20px 20px 28px">
-    <h1 class="h1">Вишлист</h1>
-    <div class="tabs two mt16">${[["mine",`Мой (${mine.length})`],["partner","Партнёр"]].map(([k,l])=>`<button class="${S.wishTab===k?"on":""}" data-wtab="${k}" type="button">${l}</button>`).join("")}</div>${body}</div></div>`;
+    <h1 class="h1">Вішліст</h1>
+    <div class="tabs two mt16">${[["mine",`Мій (${mine.length})`],["partner","Партнер"]].map(([k,l])=>`<button class="${S.wishTab===k?"on":""}" data-wtab="${k}" type="button">${l}</button>`).join("")}</div>${body}</div></div>`;
 };
 function partnerBody(){
-  if(!S.partner)return `<div class="feature mt16"><span class="eyebrow acc">${ms("group")} Доступ партнёру · PRO</span><h2 class="h3">Партнёр всегда знает, что вам подарить</h2>
-    <p class="muted" style="margin:0">Дайте доступ к своему вишлисту. Партнёр будет видеть всё, что вы сохраняете, и сможет выбрать подарок. Что именно он выбрал, останется сюрпризом.</p>
-    <form id="partner-form" class="field" autocomplete="off"><input id="pname" placeholder="@username в Telegram или телефон" aria-label="Контакт партнёра" required><button class="btn sm" type="submit">Дать доступ</button></form></div>
-    <p class="small muted mt16" style="font-style:italic">Доступ можно закрыть в любой момент.</p>`;
-  return `<div class="feature mt16"><div class="between"><div class="stack g4"><span class="eyebrow acc">${ms("group")} Партнёр</span><span class="h3">${esc(S.partner.name)}</span><span class="small ${S.partner.ok?"note":"muted"}">${S.partner.ok?"Видит ваш вишлист":"Приглашение отправлено"}</span></div><span class="tgava">${esc(S.partner.name.replace(/^@/,"")[0]||"П").toUpperCase()}</span></div>
-    <button class="btn line" data-act="partner-view" type="button">Посмотреть глазами партнёра</button><button class="btn ghost" data-act="partner-off" type="button">Закрыть доступ</button></div>`;
+  if(!S.partner)return `<div class="feature mt16"><span class="eyebrow acc">${ms("group")} Доступ партнеру · PRO</span><h2 class="h3">Партнер завжди знає, що вам подарувати</h2>
+    <p class="muted" style="margin:0">Дайте доступ до свого вішліста. Партнер бачитиме все, що ви зберігаєте, і зможе обрати подарунок. Що саме він обрав, залишиться сюрпризом.</p>
+    <form id="partner-form" class="field" autocomplete="off"><input id="pname" placeholder="@username у Telegram або телефон" aria-label="Контакт партнера" required><button class="btn sm" type="submit">Дати доступ</button></form></div>
+    <p class="small muted mt16" style="font-style:italic">Доступ можна закрити будь-коли.</p>`;
+  return `<div class="feature mt16"><div class="between"><div class="stack g4"><span class="eyebrow acc">${ms("group")} Партнер</span><span class="h3">${esc(S.partner.name)}</span><span class="small ${S.partner.ok?"note":"muted"}">${S.partner.ok?"Бачить ваш вішліст":"Запрошення надіслано"}</span></div><span class="tgava">${esc(S.partner.name.replace(/^@/,"")[0]||"П").toUpperCase()}</span></div>
+    <button class="btn line" data-act="partner-view" type="button">Подивитися очима партнера</button><button class="btn ghost" data-act="partner-off" type="button">Закрити доступ</button></div>`;
 }
 V.guest=()=>{
   const items=FRIEND_LIST.map(i=>byId[i]),pm=S.guestMode==="partner";
   return `<div class="scr">${header()}<div class="pad" style="padding:20px 20px 28px">
-    <span class="eyebrow acc">${ms("redeem")} ${pm?"Анастасия дала вам доступ":"Вам прислали вишлист"}</span>
-    <h1 class="h1 mt12">Вишлист Анастасии</h1><p class="eyebrow mt8">${pm?"Обновляется, когда она сохраняет вещи":"К дню рождения"} · ${items.length} вещей</p>
-    <div class="panel mt16"><p style="margin:0">Выберите вещь в подарок. Для остальных гостей она будет отмечена «Уже выбрано», а Анастасия не узнает, что вы выбрали.</p></div>
+    <span class="eyebrow acc">${ms("redeem")} ${pm?"Анастасія дала вам доступ":"Вам надіслали вішліст"}</span>
+    <h1 class="h1 mt12">Вішліст Анастасії</h1><p class="eyebrow mt8">${pm?"Оновлюється, коли вона зберігає речі":"До дня народження"} · ${items.length} речей</p>
+    <div class="panel mt16"><p style="margin:0">Оберіть річ у подарунок. Для інших гостей вона буде позначена «Вже обрано», а Анастасія не дізнається, що ви обрали.</p></div>
     <div class="grid mt24">${items.map(p=>{const mine=S.myGift===p.id,taken=S.chosen.has(p.id)&&!mine;
-      return `<div class="card ${taken?"chosen":""}">${tile(p,`<span class="badge ${taken?"":"lt"}">${taken?"Уже выбрано":mine?"Ваш подарок":"Свободно"}</span>`)}
+      return `<div class="card ${taken?"chosen":""}">${tile(p,`<span class="badge ${taken?"":"lt"}">${taken?"Вже обрано":mine?"Ваш подарунок":"Вільно"}</span>`)}
       <div class="stack g4"><span class="store">${p.store}</span><div class="pname">${esc(p.name)}</div><span class="price">${fmt(p.price)}</span></div>
-      ${taken?`<button class="btn sm dim" type="button" disabled style="width:100%">Уже выбрано</button>`:mine?`<a class="btn sm esp" href="${STORES[p.store]}" target="_blank" rel="noopener" style="width:100%">В магазин</a>`:`<button class="btn sm" data-gift="${p.id}" type="button" style="width:100%">Выбрать</button>`}</div>`}).join("")}</div>
-    <div class="panel mt32 small muted" style="text-align:center;font-style:italic">Для вас это бесплатно: вы покупаете в магазине по обычной цене.</div></div></div>`;
+      ${taken?`<button class="btn sm dim" type="button" disabled style="width:100%">Вже обрано</button>`:mine?`<a class="btn sm esp" href="${STORES[p.store]}" target="_blank" rel="noopener" style="width:100%">У магазин</a>`:`<button class="btn sm" data-gift="${p.id}" type="button" style="width:100%">Обрати</button>`}</div>`}).join("")}</div>
+    <div class="panel mt32 small muted" style="text-align:center;font-style:italic">Для вас це безкоштовно: ви купуєте в магазині за звичайною ціною.</div></div></div>`;
 };
 V.cart=()=>{
-  if(!S.cart.length)return `<div class="scr">${header()}<div class="pad" style="padding-top:28px"><h1 class="h1">Корзина</h1><div class="empty mt24">${ms("shopping_bag")}<span class="h3">Корзина пуста</span><span>Нажмите «В корзину» на любой вещи. Отсюда вы перейдёте в магазины за покупкой.</span><button class="btn sm" data-go="search" type="button">Перейти к поиску</button></div></div></div>`;
+  if(!S.cart.length)return `<div class="scr">${header()}<div class="pad" style="padding-top:28px"><h1 class="h1">Кошик</h1><div class="empty mt24">${ms("shopping_bag")}<span class="h3">Кошик порожній</span><span>Натисніть «У кошик» на будь-якій речі. Звідси ви перейдете в магазини за покупкою.</span><button class="btn sm" data-go="search" type="button">Перейти до пошуку</button></div></div></div>`;
   const groups={};S.cart.forEach(c=>{const p=byId[c.id];(groups[p.store]=groups[p.store]||[]).push({...c,p})});
   const total=S.cart.reduce((s,c)=>s+byId[c.id].price,0);
   return `<div class="scr">${header()}<div class="pad" style="padding:20px 20px 28px">
-    <h1 class="h1">Корзина</h1><p class="lead mt8">${S.cart.length} ${plural(S.cart.length,"вещь","вещи","вещей")} из ${Object.keys(groups).length} ${plural(Object.keys(groups).length,"магазина","магазинов","магазинов")}. Покупка и оплата проходят на сайте каждого магазина.</p>
+    <h1 class="h1">Кошик</h1><p class="lead mt8">${S.cart.length} ${plural(S.cart.length,"річ","речі","речей")} з ${Object.keys(groups).length} ${plural(Object.keys(groups).length,"магазину","магазинів","магазинів")}. Покупка й оплата відбуваються на сайті кожного магазину.</p>
     <div class="stack g16 mt24">${Object.entries(groups).map(([s,arr])=>{const sub=arr.reduce((a,c)=>a+c.p.price,0);
       return `<div class="storegrp"><div class="head"><span class="h3">${s}</span><span class="price">${fmt(sub)}</span></div>
-      ${arr.map(c=>`<div class="cartrow">${tile(c.p)}<div class="stack g4" style="flex:1;min-width:0"><span class="pname">${esc(c.p.name)}</span><span class="small muted">Размер ${c.size}</span><span class="price small">${fmt(c.p.price)}</span></div><button class="iconbtn" data-uncart="${c.id}" type="button" aria-label="Убрать">${ms("close")}</button></div>`).join("")}
+      ${arr.map(c=>`<div class="cartrow">${tile(c.p)}<div class="stack g4" style="flex:1;min-width:0"><span class="pname">${esc(c.p.name)}</span><span class="small muted">Розмір ${c.size}</span><span class="price small">${fmt(c.p.price)}</span></div><button class="iconbtn" data-uncart="${c.id}" type="button" aria-label="Прибрати">${ms("close")}</button></div>`).join("")}
       <div style="padding:12px 14px 14px"><a class="btn" href="${STORES[s]}" target="_blank" rel="noopener">Перейти в ${s} ${ms("north_east")}</a></div></div>`}).join("")}</div>
-    <div class="panel mt24 between"><span class="eyebrow ink">Итого</span><span class="price" style="font-size:24px">${fmt(total)}</span></div></div></div>`;
+    <div class="panel mt24 between"><span class="eyebrow ink">Разом</span><span class="price" style="font-size:24px">${fmt(total)}</span></div></div></div>`;
 };
 
 /* account */
 V.profile=()=>`<div class="scr">${header()}<div class="pad" style="padding:20px 20px 28px">
-  <div class="feature" style="flex-direction:row;align-items:center;gap:16px"><span class="avatar" style="width:62px;height:62px;font-size:28px">А</span><div class="stack g4"><span class="h3">Анастасия</span><span class="small muted">${S.city||"Город не выбран"} · <button class="link" data-act="city" type="button" style="font-size:10px">изменить</button></span><span class="pro-tag">${S.pro?"FINDLY PRO · пробный период":"Бесплатный тариф"}</span></div></div>
-  <div class="sec"><span class="eyebrow ink">Мои размеры</span></div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">${[["top","Верх",["XS","S","M","L","XL"]],["bottom","Низ",["25","26","27","28","29"]],["shoes","Обувь",["36","37","38","39","40"]]].map(([k,l,o])=>`<label class="panel stack g8"><span class="eyebrow">${l}</span><select id="size-${k}" data-sizekey="${k}" style="border:0;background:transparent;font:500 26px/1 var(--serif)">${o.map(v=>`<option ${S.sizes[k]===v?"selected":""}>${v}</option>`).join("")}</select></label>`).join("")}</div>
-  <div class="sec"><span class="eyebrow ink">Мой стиль</span></div>
-  <div class="chips">${["Минимализм","Классика","Романтика","Монохром","Спорт-шик","Оверсайз"].map(s=>`<button class="chip ${S.styles.has(s)?"on":""}" data-style="${s}" type="button">${s}</button>`).join("")}</div>
-  <div class="sec"><span class="eyebrow ink">Любимые магазины</span></div>
+  <div class="feature" style="flex-direction:row;align-items:center;gap:16px"><span class="avatar" style="width:62px;height:62px;font-size:28px">А</span><div class="stack g4"><span class="h3">Анастасія</span><span class="small muted">${S.city||"Місто не обрано"} · <button class="link" data-act="city" type="button" style="font-size:10px">змінити</button></span><span class="pro-tag">${S.pro?"FINDLY PRO · пробний період":"Безкоштовний тариф"}</span></div></div>
+  <div class="sec"><span class="eyebrow ink">Мої розміри</span></div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">${[["top","Верх",["XS","S","M","L","XL"]],["bottom","Низ",["25","26","27","28","29"]],["shoes","Взуття",["36","37","38","39","40"]]].map(([k,l,o])=>`<label class="panel stack g8"><span class="eyebrow">${l}</span><select id="size-${k}" data-sizekey="${k}" style="border:0;background:transparent;font:500 26px/1 var(--serif)">${o.map(v=>`<option ${S.sizes[k]===v?"selected":""}>${v}</option>`).join("")}</select></label>`).join("")}</div>
+  <div class="sec"><span class="eyebrow ink">Мій стиль</span></div>
+  <div class="chips">${["Мінімалізм","Класика","Романтика","Монохром","Спорт-шик","Оверсайз"].map(s=>`<button class="chip ${S.styles.has(s)?"on":""}" data-style="${s}" type="button">${s}</button>`).join("")}</div>
+  <div class="sec"><span class="eyebrow ink">Улюблені магазини</span></div>
   <div class="chips">${Object.keys(STORES).map(s=>`<button class="chip ${S.favStores.has(s)?"on":""}" data-fav="${s}" type="button">${s}</button>`).join("")}</div>
-  <div class="sec"><span class="eyebrow ink">Настройки</span></div>
+  <div class="sec"><span class="eyebrow ink">Налаштування</span></div>
   <div class="stack g4">
-    <div class="setrow"><div>Бюджет по умолчанию<small>Подставим в образы</small></div><span class="stepper"><button data-act="budget" data-d="-500" type="button" aria-label="Меньше">${ms("remove")}</button><span>${fmt(S.budget)}</span><button data-act="budget" data-d="500" type="button" aria-label="Больше">${ms("add")}</button></span></div>
-    <div class="setrow"><div>Telegram<small>${S.tg?"Подключено к боту FINDLY":"Уведомления о цене приходят сюда"}</small></div><button class="btn sm ${S.tg?"line":""}" data-act="tg" type="button">${S.tg?"Отключить":"Подключить"}</button></div>
-    <button class="setrow" data-go="alerts" type="button" style="width:100%;text-align:left"><div>Слежу за ценой<small>${S.tracked.size} ${plural(S.tracked.size,"вещь","вещи","вещей")}</small></div>${ms("chevron_right")}</button>
-    <button class="setrow" data-go="pro" type="button" style="width:100%;text-align:left"><div>FINDLY PRO<small>${S.pro?"Активен, 7 дней бесплатно":"Фото, ассистент, партнёр, цены"}</small></div>${ms("chevron_right")}</button></div>
-  <button class="link mt32" data-act="logout" type="button" style="display:block;margin-inline:auto;color:var(--muted)">Выйти из аккаунта</button></div></div>`;
+    <div class="setrow"><div>Бюджет за замовчуванням<small>Підставимо в образи</small></div><span class="stepper"><button data-act="budget" data-d="-500" type="button" aria-label="Менше">${ms("remove")}</button><span>${fmt(S.budget)}</span><button data-act="budget" data-d="500" type="button" aria-label="Більше">${ms("add")}</button></span></div>
+    <div class="setrow"><div>Telegram<small>${S.tg?"Підключено до бота FINDLY":"Сповіщення про ціну приходять сюди"}</small></div><button class="btn sm ${S.tg?"line":""}" data-act="tg" type="button">${S.tg?"Вимкнути":"Підключити"}</button></div>
+    <button class="setrow" data-go="alerts" type="button" style="width:100%;text-align:left"><div>Стежу за ціною<small>${S.tracked.size} ${plural(S.tracked.size,"річ","речі","речей")}</small></div>${ms("chevron_right")}</button>
+    <button class="setrow" data-go="pro" type="button" style="width:100%;text-align:left"><div>FINDLY PRO<small>${S.pro?"Активний, 7 днів безкоштовно":"Фото, асистентка, партнер, ціни"}</small></div>${ms("chevron_right")}</button></div>
+  <button class="link mt32" data-act="logout" type="button" style="display:block;margin-inline:auto;color:var(--muted)">Вийти з акаунта</button></div></div>`;
 
 V.alerts=()=>{
   const items=[...S.tracked].map(([id,t])=>({p:byId[id],t})).filter(x=>x.p),demo=byId.j1;
   return `<div class="scr">${header()}${back()}<div class="pad" style="padding-bottom:28px">
-    <span class="eyebrow bur">Цены · PRO</span><h1 class="h1 mt8">Слежу за ценой</h1>
-    <p class="lead mt8">Когда цена опустится до вашей цели, мы напишем в Telegram.</p>
-    <div class="setrow mt16" style="box-shadow:inset 0 0 0 1px ${S.tg?"var(--line)":"var(--champ)"}"><div>Telegram-бот FINDLY<small>${S.tg?"Подключён · уведомления включены":"Не подключён: уведомления не придут"}</small></div><button class="btn sm ${S.tg?"line":""}" data-act="tg" type="button">${S.tg?"Отключить":"Подключить"}</button></div>
+    <span class="eyebrow bur">Ціни · PRO</span><h1 class="h1 mt8">Стежу за ціною</h1>
+    <p class="lead mt8">Коли ціна знизиться до вашої цілі, ми напишемо в Telegram.</p>
+    <div class="setrow mt16" style="box-shadow:inset 0 0 0 1px ${S.tg?"var(--line)":"var(--champ)"}"><div>Telegram-бот FINDLY<small>${S.tg?"Підключено · сповіщення увімкнені":"Не підключено: сповіщення не прийдуть"}</small></div><button class="btn sm ${S.tg?"line":""}" data-act="tg" type="button">${S.tg?"Вимкнути":"Підключити"}</button></div>
     <div class="stack g16 mt24">${items.length?items.map(({p,t})=>{const hit=p.price<=t;
-      return `<div class="alert ${hit?"hit":""}"><div class="top"><span>${hit?"Цель достигнута":"Ждём снижения"}</span><button data-untrack="${p.id}" type="button" aria-label="Перестать следить">${ms("close")}</button></div>
+      return `<div class="alert ${hit?"hit":""}"><div class="top"><span>${hit?"Ціль досягнута":"Чекаємо зниження"}</span><button data-untrack="${p.id}" type="button" aria-label="Перестати стежити">${ms("close")}</button></div>
       <div class="body"><button data-pid="${p.id}" type="button" style="display:contents">${tile(p)}</button><div class="stack g8" style="flex:1;min-width:0"><span class="store">${p.store}</span><span class="pname">${esc(p.name)}</span>
         <div style="display:flex;gap:8px;align-items:baseline"><span class="price" style="font-size:19px">${fmt(p.price)}</span>${p.old?`<span class="old">${fmt(p.old)}</span>`:""}</div>
-        <div class="between small"><span class="muted">Цель</span><span class="stepper"><button data-tgt="${p.id}" data-d="-100" type="button" aria-label="Меньше">${ms("remove")}</button><span>${fmt(t)}</span><button data-tgt="${p.id}" data-d="100" type="button" aria-label="Больше">${ms("add")}</button></span></div></div></div></div>`}).join(""):`<div class="empty">${ms("notifications")}<span>Нажмите «Следить за ценой» в карточке любой вещи.</span></div>`}</div>
-    <div class="panel mt24 stack g12"><span class="eyebrow">Так придёт сообщение в Telegram</span>
-      <div style="display:flex;gap:10px;align-items:flex-start"><span class="tgava">F</span><div class="stack g4" style="flex:1;min-width:0"><b style="font-size:15px">FINDLY</b><div class="tgmsg"><b>Цена снизилась</b><br>${esc(demo.name)} — теперь ${fmt(demo.price)} вместо ${fmt(demo.old)} в ${demo.store}.</div><div class="tgbtns"><span>В магазин</span><span>Открыть FINDLY</span></div></div></div></div></div></div>`;
+        <div class="between small"><span class="muted">Ціль</span><span class="stepper"><button data-tgt="${p.id}" data-d="-100" type="button" aria-label="Менше">${ms("remove")}</button><span>${fmt(t)}</span><button data-tgt="${p.id}" data-d="100" type="button" aria-label="Більше">${ms("add")}</button></span></div></div></div></div>`}).join(""):`<div class="empty">${ms("notifications")}<span>Натисніть «Стежити за ціною» в картці будь-якої речі.</span></div>`}</div>
+    <div class="panel mt24 stack g12"><span class="eyebrow">Так прийде повідомлення в Telegram</span>
+      <div style="display:flex;gap:10px;align-items:flex-start"><span class="tgava">F</span><div class="stack g4" style="flex:1;min-width:0"><b style="font-size:15px">FINDLY</b><div class="tgmsg"><b>Ціна знизилася</b><br>${esc(demo.name)} — тепер ${fmt(demo.price)} замість ${fmt(demo.old)} у ${demo.store}.</div><div class="tgbtns"><span>У магазин</span><span>Відкрити FINDLY</span></div></div></div></div></div></div>`;
 };
 
 V.pro=()=>`<div class="scr">
   <div class="prohero">${garment("coat","#c8ad86",{scale:1,dy:-24})}<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,21,15,.4),transparent 35%,rgba(36,21,15,.9))"></div>
-    <div style="position:absolute;top:12px;right:12px"><button class="glass" data-back type="button">${ms("close")}Закрыть</button></div>
-    <div style="position:absolute;left:20px;right:20px;bottom:26px;color:#f6f0e8;text-align:center" class="stack g8"><span class="eyebrow" style="color:var(--champ)">Подписка</span><span style="font:500 44px/1 var(--serif);letter-spacing:.2em;padding-left:.2em">FINDLY PRO</span></div></div>
+    <div style="position:absolute;top:12px;right:12px"><button class="glass" data-back type="button">${ms("close")}Закрити</button></div>
+    <div style="position:absolute;left:20px;right:20px;bottom:26px;color:#f6f0e8;text-align:center" class="stack g8"><span class="eyebrow" style="color:var(--champ)">Підписка</span><span style="font:500 44px/1 var(--serif);letter-spacing:.2em;padding-left:.2em">FINDLY PRO</span></div></div>
   <div class="pad stack g20" style="padding-block:24px 30px">
-    <p class="lead" style="text-align:center;font-style:italic">Всё, что делает поиск по-настоящему личным.</p><div class="hair"></div>
-    ${[["auto_awesome","AI-ассистент","Спрашивайте, что надеть, и получайте подборки"],["photo_camera","Поиск по фото","Скриншот из TikTok — и вещь найдена"],["group","Доступ партнёру","Он видит ваш вишлист и знает, что подарить"],["notifications","Цены в Telegram","Напишем, когда вещь подешевеет до цели"]].map(([i,t,d])=>`<div class="feat"><span class="ic">${ms(i)}</span><div class="stack g4"><span class="h3" style="font-size:19px">${t}</span><span class="small muted">${d}</span></div></div>`).join("")}
-    <div class="panel sand stack g12"><div class="between"><span class="eyebrow">Тариф на месяц</span><span class="eyebrow bur">7 дней бесплатно</span></div>
-      <div><span style="font:500 40px/1 var(--serif)" class="num">${fmt(129)}</span> <span class="muted">/ месяц</span></div>
-      ${S.pro?`<div class="btn esp" style="cursor:default">${ms("check")} PRO активен</div>`:`<button class="btn" data-act="pro-on" type="button">Попробовать 7 дней бесплатно</button>`}
-      <p class="small muted" style="margin:0;text-align:center;font-style:italic">Отменить можно в любой момент в профиле.</p></div></div></div>`;
+    <p class="lead" style="text-align:center;font-style:italic">Усе, що робить пошук по-справжньому особистим.</p><div class="hair"></div>
+    ${[["auto_awesome","AI-асистентка","Питайте, що вдягнути, і отримуйте добірки"],["photo_camera","Пошук за фото","Скриншот із TikTok — і річ знайдено"],["group","Доступ партнеру","Він бачить ваш вішліст і знає, що подарувати"],["notifications","Ціни в Telegram","Напишемо, коли річ подешевшає до цілі"]].map(([i,t,d])=>`<div class="feat"><span class="ic">${ms(i)}</span><div class="stack g4"><span class="h3" style="font-size:19px">${t}</span><span class="small muted">${d}</span></div></div>`).join("")}
+    <div class="panel sand stack g12"><div class="between"><span class="eyebrow">Тариф на місяць</span><span class="eyebrow bur">7 днів безкоштовно</span></div>
+      <div><span style="font:500 40px/1 var(--serif)" class="num">${fmt(129)}</span> <span class="muted">/ місяць</span></div>
+      ${S.pro?`<div class="btn esp" style="cursor:default">${ms("check")} PRO активний</div>`:`<button class="btn" data-act="pro-on" type="button">Спробувати 7 днів безкоштовно</button>`}
+      <p class="small muted" style="margin:0;text-align:center;font-style:italic">Скасувати можна будь-коли в профілі.</p></div></div></div>`;
 
 /* ---------- modals ---------- */
 function modalHTML(){
   const m=S.modal;if(!m)return "";
-  if(m==="menu")return `<div class="overlay" data-overlay style="align-items:stretch"><nav class="drawer" aria-label="Меню"><div class="between"><span class="logo" style="padding-left:0">FINDLY</span><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
-    <div class="items">${[["search","Поиск"],["assistant","Ассистент"],["looks","Образы"],["about","О нас"],["home","На главную"]].map(([k,l])=>`<button data-menu="${k}" type="button">${l}</button>`).join("")}</div>
-    <div style="margin-top:auto" class="stack g8"><span class="eyebrow">Контакты</span><span class="small muted">0 800 000 000 · @findly_ua</span></div></nav></div>`;
-  if(m==="city")return `<div class="overlay center" data-overlay><div class="sheet" role="dialog" aria-label="Выбор города" style="padding:26px 22px"><span class="eyebrow bur">Добро пожаловать</span><h2 class="h2 mt8">Ваш город</h2>
-    <p class="lead mt8" style="font-size:16px">Покажем доставку и вещи, которые есть в наличии рядом с вами. Регистрация не нужна.</p>
+  if(m==="menu")return `<div class="overlay" data-overlay style="align-items:stretch"><nav class="drawer" aria-label="Меню"><div class="between"><span class="logo" style="padding-left:0">FINDLY</span><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
+    <div class="items">${[["search","Пошук"],["assistant","Асистент"],["looks","Образи"],["about","Про нас"],["home","На головну"]].map(([k,l])=>`<button data-menu="${k}" type="button">${l}</button>`).join("")}</div>
+    <div style="margin-top:auto" class="stack g8"><span class="eyebrow">Контакти</span><span class="small muted">0 800 000 000 · @findly_ua</span></div></nav></div>`;
+  if(m==="city")return `<div class="overlay center" data-overlay><div class="sheet" role="dialog" aria-label="Вибір міста" style="padding:26px 22px"><span class="eyebrow bur">Ласкаво просимо</span><h2 class="h2 mt8">Ваше місто</h2>
+    <p class="lead mt8" style="font-size:16px">Покажемо доставку й речі, які є в наявності поруч із вами. Реєстрація не потрібна.</p>
     <div class="cities mt16">${CITIES.map(c=>`<button class="opt ${S.city===c?"on":""}" data-city="${c}" type="button">${c}</button>`).join("")}</div>
-    <form id="city-form" class="field mt12" autocomplete="off"><input id="cityq" placeholder="Другой город" aria-label="Другой город"><button class="btn sm" type="submit">Выбрать</button></form>
-    <button class="link mt16" data-close type="button" style="display:block;margin-inline:auto;color:var(--muted)">Позже</button></div></div>`;
-  if(m==="login")return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Вход"><div class="grab"></div><div class="between"><span class="eyebrow bur">Вход в FINDLY</span><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
-    <h2 class="h2 mt8">Войдите, чтобы <i>сохранить</i></h2><p class="lead mt8" style="font-size:16px">Аккаунт нужен для вишлиста, слежения за ценой и поиска по фото. Искать и смотреть вещи можно без него.</p>
-    <div class="stack g8 mt24">${[["send","Продолжить с Telegram"],["account_circle","Продолжить с Google"],["call","По номеру телефона"]].map(([i,l])=>`<button class="opt" data-act="do-login" type="button">${ms(i)}${l}</button>`).join("")}</div>
-    <p class="small muted mt16" style="text-align:center;font-style:italic">Продолжая, вы соглашаетесь с условиями сервиса.</p></div></div>`;
-  if(m==="prom")return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="FINDLY PRO"><div class="grab"></div><div class="between"><span class="eyebrow bur">FINDLY PRO</span><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
-    <h2 class="h2 mt8">Эта функция — <i>в PRO</i></h2><p class="lead mt8" style="font-size:16px">Ассистент, поиск по фото, доступ партнёру и цены в Telegram. Первые 7 дней бесплатно, затем ${fmt(129)} в месяц.</p>
-    <div class="stack g8 mt24"><button class="btn" data-act="pro-on" type="button">Попробовать 7 дней бесплатно</button><button class="btn line" data-act="pro-more" type="button">Подробнее о PRO</button></div></div></div>`;
-  if(m==="tg")return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Подключение Telegram"><div class="grab"></div><div class="between"><span class="eyebrow bur">${ms("send")} Уведомления</span><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
-    <h2 class="h2 mt8">Цены приходят <i>в Telegram</i></h2><p class="lead mt8" style="font-size:16px">Подключите бота FINDLY: он напишет, как только вещь подешевеет до вашей цели. Не нужно заходить на сайт и проверять.</p>
-    <div class="panel sand mt16 stack g8"><span class="small">1. Нажмите «Открыть бота»</span><span class="small">2. В Telegram нажмите «Старт»</span><span class="small">3. Готово, уведомления включены</span></div>
-    <div class="stack g8 mt24"><button class="btn" data-act="tg-on" type="button">${ms("send")} Открыть бота</button><button class="btn line" data-close type="button">Не сейчас</button></div></div></div>`;
+    <form id="city-form" class="field mt12" autocomplete="off"><input id="cityq" placeholder="Інше місто" aria-label="Інше місто"><button class="btn sm" type="submit">Обрати</button></form>
+    <button class="link mt16" data-close type="button" style="display:block;margin-inline:auto;color:var(--muted)">Пізніше</button></div></div>`;
+  if(m==="login")return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Вхід"><div class="grab"></div><div class="between"><span class="eyebrow bur">Вхід у FINDLY</span><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
+    <h2 class="h2 mt8">Увійдіть, щоб <i>зберегти</i></h2><p class="lead mt8" style="font-size:16px">Акаунт потрібен для вішліста, стеження за ціною та пошуку за фото. Шукати й переглядати речі можна без нього.</p>
+    <div class="stack g8 mt24">${[["send","Продовжити з Telegram"],["account_circle","Продовжити з Google"],["call","За номером телефону"]].map(([i,l])=>`<button class="opt" data-act="do-login" type="button">${ms(i)}${l}</button>`).join("")}</div>
+    <p class="small muted mt16" style="text-align:center;font-style:italic">Продовжуючи, ви погоджуєтеся з умовами сервісу.</p></div></div>`;
+  if(m==="prom")return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="FINDLY PRO"><div class="grab"></div><div class="between"><span class="eyebrow bur">FINDLY PRO</span><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
+    <h2 class="h2 mt8">Ця функція — <i>у PRO</i></h2><p class="lead mt8" style="font-size:16px">Асистент, пошук за фото, доступ партнеру та ціни в Telegram. Перші 7 днів безкоштовно, потім ${fmt(129)} на місяць.</p>
+    <div class="stack g8 mt24"><button class="btn" data-act="pro-on" type="button">Спробувати 7 днів безкоштовно</button><button class="btn line" data-act="pro-more" type="button">Детальніше про PRO</button></div></div></div>`;
+  if(m==="tg")return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Підключення Telegram"><div class="grab"></div><div class="between"><span class="eyebrow bur">${ms("send")} Сповіщення</span><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
+    <h2 class="h2 mt8">Ціни приходять <i>у Telegram</i></h2><p class="lead mt8" style="font-size:16px">Підключіть бота FINDLY: він напише, щойно річ подешевшає до вашої цілі. Не потрібно заходити на сайт і перевіряти.</p>
+    <div class="panel sand mt16 stack g8"><span class="small">1. Натисніть «Відкрити бота»</span><span class="small">2. У Telegram натисніть «Старт»</span><span class="small">3. Готово, сповіщення увімкнені</span></div>
+    <div class="stack g8 mt24"><button class="btn" data-act="tg-on" type="button">${ms("send")} Відкрити бота</button><button class="btn line" data-close type="button">Не зараз</button></div></div></div>`;
   if(m==="sizes"){const p=byId[S.pid],cur=S.size||defSize(p);let head,rows;
-    if(p.cat==="shoes"||p.cat==="sneakers"){head=["EU","Длина стопы","UA"];rows=[["36","23,0 см","36"],["37","23,7 см","37"],["38","24,4 см","38"],["39","25,0 см","39"],["40","25,7 см","40"]]}
-    else if(p.cat==="jeans"){head=["W","Талия","Бёдра"];rows=[["25","64 см","90 см"],["26","67 см","93 см"],["27","70 см","96 см"],["28","73 см","99 см"],["29","76 см","102 см"]]}
-    else{head=["Размер","Грудь","Талия","Бёдра"];rows=[["XS","82","64","90"],["S","86","68","94"],["M","90","72","98"],["L","96","78","104"],["XL","102","84","110"]]}
-    return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Размерная сетка"><div class="grab"></div><div class="between"><span class="eyebrow bur">${p.store}</span><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
-      <h2 class="h2 mt8">Размерная сетка</h2><p class="small muted mt8" style="font-style:italic">Мерки тела в сантиметрах, по данным магазина</p>
+    if(p.cat==="shoes"||p.cat==="sneakers"){head=["EU","Довжина стопи","UA"];rows=[["36","23,0 см","36"],["37","23,7 см","37"],["38","24,4 см","38"],["39","25,0 см","39"],["40","25,7 см","40"]]}
+    else if(p.cat==="jeans"){head=["W","Талія","Стегна"];rows=[["25","64 см","90 см"],["26","67 см","93 см"],["27","70 см","96 см"],["28","73 см","99 см"],["29","76 см","102 см"]]}
+    else{head=["Розмір","Груди","Талія","Стегна"];rows=[["XS","82","64","90"],["S","86","68","94"],["M","90","72","98"],["L","96","78","104"],["XL","102","84","110"]]}
+    return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Розмірна сітка"><div class="grab"></div><div class="between"><span class="eyebrow bur">${p.store}</span><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
+      <h2 class="h2 mt8">Розмірна сітка</h2><p class="small muted mt8" style="font-style:italic">Мірки тіла в сантиметрах, за даними магазину</p>
       <table class="sz mt16"><thead><tr>${head.map(h=>`<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr class="${r[0]===cur?"on":""}">${r.map(c=>`<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>
-      <p class="small muted mt16">Между размерами? ${p.cat==="coat"?"Свободная модель: берите меньший.":"Берите больший."}</p><button class="btn mt16" data-close type="button">Понятно</button></div></div>`}
-  if(m==="share"){const url="https://findly.app/w/anastasia",text="Мой вишлист на FINDLY. Выбери подарок, я не узнаю, что именно";
-    return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Поделиться вишлистом"><div class="grab"></div><div class="between"><h2 class="h2">Поделиться вишлистом</h2><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
-      <p class="lead mt8" style="font-size:16px">Ссылка откроется с надписью «Вам прислали вишлист».</p>
-      <div class="chips row mt16">${["День рождения","Новый год","14 февраля","8 Марта","Просто так"].map(o=>`<button class="chip ${S.occasion===o?"on":""}" data-occ="${o}" type="button">${o}</button>`).join("")}</div>
-      <div class="panel sand mt16"><span class="eyebrow bur">${ms("lock")} Режим сюрприза</span><p class="small muted" style="margin:8px 0 0">Выбранная вещь станет «Уже выбрано» для остальных. Вы этого не увидите.</p></div>
-      <div class="stack g8 mt16"><a class="opt" href="https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${ms("send")}Отправить в Telegram</a>
-        <div class="opt" style="justify-content:space-between"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${url.replace("https://","")}</span><button class="btn sm line" data-copy="${url}" type="button">Скопировать</button></div></div>
-      <button class="btn mt16" data-act="guest-view" type="button">Посмотреть глазами гостя</button></div></div>`}
+      <p class="small muted mt16">Між розмірами? ${p.cat==="coat"?"Вільна модель: беріть менший.":"Беріть більший."}</p><button class="btn mt16" data-close type="button">Зрозуміло</button></div></div>`}
+  if(m==="share"){const url="https://findly.app/w/anastasia",text="Мій вішліст на FINDLY. Обери подарунок, я не дізнаюся, що саме";
+    return `<div class="overlay" data-overlay><div class="sheet" role="dialog" aria-label="Поділитися вішлістом"><div class="grab"></div><div class="between"><h2 class="h2">Поділитися вішлістом</h2><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
+      <p class="lead mt8" style="font-size:16px">Посилання відкриється з написом «Вам надіслали вішліст».</p>
+      <div class="chips row mt16">${["День народження","Новий рік","14 лютого","8 березня","Просто так"].map(o=>`<button class="chip ${S.occasion===o?"on":""}" data-occ="${o}" type="button">${o}</button>`).join("")}</div>
+      <div class="panel sand mt16"><span class="eyebrow bur">${ms("lock")} Режим сюрпризу</span><p class="small muted" style="margin:8px 0 0">Обрана річ стане «Вже обрано» для інших. Ви цього не побачите.</p></div>
+      <div class="stack g8 mt16"><a class="opt" href="https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}" target="_blank" rel="noopener">${ms("send")}Надіслати в Telegram</a>
+        <div class="opt" style="justify-content:space-between"><span style="min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${url.replace("https://","")}</span><button class="btn sm line" data-copy="${url}" type="button">Скопіювати</button></div></div>
+      <button class="btn mt16" data-act="guest-view" type="button">Подивитися очима гостя</button></div></div>`}
   if(m==="gift"){const p=byId[S.myGift];
-    return `<div class="overlay center" data-overlay><div class="sheet" role="dialog" aria-label="Подарок выбран" style="padding:26px 22px;text-align:center"><span class="eyebrow bur">Готово</span><h2 class="h2 mt8">Подарок выбран</h2>
-      <p class="lead mt8" style="font-size:16px">Для остальных он отмечен «Уже выбрано». Анастасия не узнает, что вы выбрали.</p>
-      <div class="listrow mt16" style="background:var(--ivory);text-align:left">${tile(p)}<div class="stack g4" style="min-width:0"><span class="store">${p.store}</span><span class="pname">${esc(p.name)}</span><span class="price">${fmt(p.price)}</span><span class="small note">Закреплено за вами на 48 часов</span></div></div>
-      <div class="stack g8 mt16"><a class="btn" href="${STORES[p.store]}" target="_blank" rel="noopener">Перейти в магазин</a><button class="btn line" data-act="ungift" type="button">Отменить выбор</button><button class="link mt8" data-close type="button" style="align-self:center">Вернуться к списку</button></div></div></div>`}
-  if(m==="map")return `<div class="overlay mapsheet" data-overlay><div class="sheet"><div class="grab"></div><div class="between"><h2 class="h2">Экраны макета</h2><button class="iconbtn" data-close type="button" aria-label="Закрыть">${ms("close")}</button></div>
+    return `<div class="overlay center" data-overlay><div class="sheet" role="dialog" aria-label="Подарунок обрано" style="padding:26px 22px;text-align:center"><span class="eyebrow bur">Готово</span><h2 class="h2 mt8">Подарунок обрано</h2>
+      <p class="lead mt8" style="font-size:16px">Для інших він позначений «Вже обрано». Анастасія не дізнається, що ви обрали.</p>
+      <div class="listrow mt16" style="background:var(--ivory);text-align:left">${tile(p)}<div class="stack g4" style="min-width:0"><span class="store">${p.store}</span><span class="pname">${esc(p.name)}</span><span class="price">${fmt(p.price)}</span><span class="small note">Закріплено за вами на 48 годин</span></div></div>
+      <div class="stack g8 mt16"><a class="btn" href="${STORES[p.store]}" target="_blank" rel="noopener">Перейти в магазин</a><button class="btn line" data-act="ungift" type="button">Скасувати вибір</button><button class="link mt8" data-close type="button" style="align-self:center">Повернутися до списку</button></div></div></div>`}
+  if(m==="map")return `<div class="overlay mapsheet" data-overlay><div class="sheet"><div class="grab"></div><div class="between"><h2 class="h2">Екрани макета</h2><button class="iconbtn" data-close type="button" aria-label="Закрити">${ms("close")}</button></div>
     <div class="mt12">${SCREENS.map(([k,l],i)=>`<button class="mrow" data-jump="${k}" type="button"><b>${String(i+1).padStart(2,"0")}</b>${l}</button>`).join("")}</div></div></div>`;
   return "";
 }
@@ -1014,7 +1014,7 @@ function toast(t,icon="check"){const el=document.getElementById("toast");el.quer
 function renderMap(){
   const cur=S.modal&&Object.entries(MODAL_SCREENS).find(([k,v])=>v[1]===S.modal&&v[0]===S.route);
   const active=cur?cur[0]:S.route;
-  let h=`<h2>FINDLY</h2><p>Кликабельный макет · ${SCREENS.length} экранов</p>`;
+  let h=`<h2>FINDLY</h2><p>Клікабельний макет · ${SCREENS.length} екранів</p>`;
   SCREENS.forEach(([k,l,g],i)=>{if(g)h+=`<div class="grp">${g}</div>`;h+=`<button data-jump="${k}" class="${active===k?"on":""}" type="button"><b>${String(i+1).padStart(2,"0")}</b>${l}</button>`});
   document.getElementById("map").innerHTML=h;
 }
@@ -1038,14 +1038,14 @@ function jump(k){
 }
 
 /* ---------- actions ---------- */
-function toggleWish(id){need("login",()=>{const on=!S.wish.has(id);on?S.wish.add(id):S.wish.delete(id);toast(on?"Добавлено в вишлист":"Убрано из вишлиста",on?"favorite":"check");render(true)})}
-function toggleCart(id){const p=byId[id];if(inCart(id)){S.cart=S.cart.filter(c=>c.id!==id);toast("Убрано из корзины")}else{S.cart.push({id,size:S.route==="product"&&S.pid===id?(S.size||defSize(p)):defSize(p)});toast("Добавлено в корзину","shopping_bag")}render(true)}
+function toggleWish(id){need("login",()=>{const on=!S.wish.has(id);on?S.wish.add(id):S.wish.delete(id);toast(on?"Додано у вішліст":"Прибрано з вішліста",on?"favorite":"check");render(true)})}
+function toggleCart(id){const p=byId[id];if(inCart(id)){S.cart=S.cart.filter(c=>c.id!==id);toast("Прибрано з кошика")}else{S.cart.push({id,size:S.route==="product"&&S.pid===id?(S.size||defSize(p)):defSize(p)});toast("Додано в кошик","shopping_bag")}render(true)}
 function track(){const p=byId[S.pid];need("pro",()=>{
-  if(S.tracked.has(p.id)){S.tracked.delete(p.id);toast("Больше не следим за ценой","notifications_off");render(true);return}
-  const doTrack=()=>{S.tracked.set(p.id,Math.round(p.price*.85/100)*100);toast("Напишем в Telegram, когда цена будет "+fmt(S.tracked.get(p.id)),"notifications_active");render(true)};
+  if(S.tracked.has(p.id)){S.tracked.delete(p.id);toast("Більше не стежимо за ціною","notifications_off");render(true);return}
+  const doTrack=()=>{S.tracked.set(p.id,Math.round(p.price*.85/100)*100);toast("Напишемо в Telegram, коли ціна буде "+fmt(S.tracked.get(p.id)),"notifications_active");render(true)};
   if(!S.tg){S.after={level:"login",fn:doTrack};openModal("tg");return}
   doTrack()})}
-function copy(text,msg){try{navigator.clipboard.writeText(text).then(()=>toast(msg),()=>toast("Скопируйте вручную: "+text,"content_copy"))}catch(e){toast("Скопируйте вручную: "+text,"content_copy")}}
+function copy(text,msg){try{navigator.clipboard.writeText(text).then(()=>toast(msg),()=>toast("Скопіюйте вручну: "+text,"content_copy"))}catch(e){toast("Скопіюйте вручну: "+text,"content_copy")}}
 
 document.addEventListener("click",e=>{
   const t=e.target.closest("[data-jump],[data-go],[data-back],[data-wish],[data-cart],[data-uncart],[data-pid],[data-act],[data-q],[data-chip],[data-view],[data-size],[data-det],[data-upcat],[data-ptab],[data-wtab],[data-occ],[data-gift],[data-swap],[data-untrack],[data-tgt],[data-style],[data-fav],[data-close],[data-copy],[data-city],[data-menu],[data-ask],[data-quiz],[data-overlay]");
@@ -1059,8 +1059,8 @@ document.addEventListener("click",e=>{
   if(d.go){go(d.go);return}
   if(t.hasAttribute("data-back")){goBack();return}
   if(d.pid){S.pid=d.pid;S.view=0;go("product");return}
-  if(d.copy){copy(d.copy,"Ссылка скопирована");return}
-  if(d.city){S.city=d.city;closeModal();toast("Город: "+d.city,"location_on");if(S.route!=="landing")render(true);return}
+  if(d.copy){copy(d.copy,"Посилання скопійовано");return}
+  if(d.city){S.city=d.city;closeModal();toast("Місто: "+d.city,"location_on");if(S.route!=="landing")render(true);return}
   if(d.menu){S.modal=null;renderModal();const k=d.menu;
     if(k==="home"||k==="about"){if(S.route!=="landing")go("landing");else render(true);if(k==="about")setTimeout(()=>{const el=document.getElementById("story");if(el){scroll.scrollTop=el.offsetTop}},60);else scroll.scrollTop=0;return}
     if(k==="assistant"){need("pro",()=>go("assistant"));return}
@@ -1077,7 +1077,7 @@ document.addEventListener("click",e=>{
   if(d.wtab){S.wishTab=d.wtab;render(true);return}
   if(d.occ){S.occasion=d.occ;renderModal();return}
   if(d.gift){S.chosen.add(d.gift);S.myGift=d.gift;render(true);openModal("gift");return}
-  if(d.swap){const i=+d.swap,cur=S.look.ids[i],alt=ALTS[cur];if(!alt||S.look.ids.includes(alt)){toast("Другой похожей вещи пока нет","info");return}S.look.ids[i]=alt;render(true);toast("Заменили на «"+byId[alt].name+"»","sync_alt");return}
+  if(d.swap){const i=+d.swap,cur=S.look.ids[i],alt=ALTS[cur];if(!alt||S.look.ids.includes(alt)){toast("Іншої схожої речі поки немає","info");return}S.look.ids[i]=alt;render(true);toast("Замінили на «"+byId[alt].name+"»","sync_alt");return}
   if(d.untrack){S.tracked.delete(d.untrack);render(true);return}
   if(d.tgt){S.tracked.set(d.tgt,Math.max(100,S.tracked.get(d.tgt)+(+d.d)));render(true);return}
   if(d.style){S.styles.has(d.style)?S.styles.delete(d.style):S.styles.add(d.style);render(true);return}
@@ -1088,9 +1088,9 @@ document.addEventListener("click",e=>{
     case "story":{const el=document.getElementById("story");if(el)scroll.scrollTop=el.offsetTop;break}
     case "city":openModal("city");break;
     case "login":S.after=null;openModal("login");break;
-    case "do-login":S.logged=true;toast("Вы вошли как Анастасия","person");if(S.after){resume()}else{closeModal();render(true)}break;
-    case "logout":S.logged=false;S.pro=false;go("landing");toast("Вы вышли из аккаунта");break;
-    case "pro-on":S.pro=true;toast("FINDLY PRO: 7 дней бесплатно","auto_awesome");if(S.after){resume()}else{closeModal();render(true)}break;
+    case "do-login":S.logged=true;toast("Ви увійшли як Анастасія","person");if(S.after){resume()}else{closeModal();render(true)}break;
+    case "logout":S.logged=false;S.pro=false;go("landing");toast("Ви вийшли з акаунта");break;
+    case "pro-on":S.pro=true;toast("FINDLY PRO: 7 днів безкоштовно","auto_awesome");if(S.after){resume()}else{closeModal();render(true)}break;
     case "pro-more":S.after=null;S.modal=null;go("pro");break;
     case "assistant":need("pro",()=>go("assistant"));break;
     case "camera":go("camera");break;
@@ -1099,16 +1099,16 @@ document.addEventListener("click",e=>{
     case "find-similar":S.photoTab="similar";go("photo");break;
     case "find-look":S.cropSel="look";S.photoTab="similar";go("photo");break;
     case "track":track();break;
-    case "tg":if(S.tg){S.tg=false;toast("Telegram отключён","send");render(true)}else openModal("tg");break;
-    case "tg-on":S.tg=true;toast("Telegram подключён. В макете сообщения не приходят","send");if(S.after){const a=S.after;S.after=null;S.modal=null;renderModal();a.fn()}else{closeModal();render(true)}break;
+    case "tg":if(S.tg){S.tg=false;toast("Telegram вимкнено","send");render(true)}else openModal("tg");break;
+    case "tg-on":S.tg=true;toast("Telegram підключено. У макеті повідомлення не приходять","send");if(S.after){const a=S.after;S.after=null;S.modal=null;renderModal();a.fn()}else{closeModal();render(true)}break;
     case "sizes":openModal("sizes");break;
     case "share":openModal("share");break;
     case "guest-view":S.guestMode="link";go("guest");break;
     case "partner-view":S.guestMode="partner";go("guest");break;
-    case "partner-off":S.partner=null;toast("Доступ закрыт");render(true);break;
-    case "ungift":S.chosen.delete(S.myGift);S.myGift=null;closeModal();render(true);toast("Выбор отменён","undo");break;
-    case "share-item":{const p=byId[S.pid];copy(`${p.name} — ${fmt(p.price)} в ${p.store}. Нашла на FINDLY`,"Описание вещи скопировано");break}
-    case "look-cart":S.look.ids.forEach(id=>{if(!inCart(id))S.cart.push({id,size:defSize(byId[id])})});toast("Образ в корзине","shopping_bag");render(true);break;
+    case "partner-off":S.partner=null;toast("Доступ закрито");render(true);break;
+    case "ungift":S.chosen.delete(S.myGift);S.myGift=null;closeModal();render(true);toast("Вибір скасовано","undo");break;
+    case "share-item":{const p=byId[S.pid];copy(`${p.name} — ${fmt(p.price)} у ${p.store}. Знайшла на FINDLY`,"Опис речі скопійовано");break}
+    case "look-cart":S.look.ids.forEach(id=>{if(!inCart(id))S.cart.push({id,size:defSize(byId[id])})});toast("Образ у кошику","shopping_bag");render(true);break;
     case "look-reset":S.quiz={step:0,a:{}};S.look=null;render();break;
     case "budget":S.budget=Math.max(1000,S.budget+(+d.d));render(true);break;
   }
@@ -1120,17 +1120,17 @@ document.addEventListener("keydown",e=>{
 document.addEventListener("submit",e=>{
   e.preventDefault();const f=e.target;
   if(f.id==="home-search"){const v=document.getElementById("q").value.trim();if(!v){document.getElementById("q").focus();return}
-    if(/образ/i.test(v)&&!/джинс|плать|тренч|пальто|брюк/i.test(v)){go("looks");return}S.query=v;S.removed=new Set();S.sort="match";go("parse");return}
+    if(/образ/i.test(v)&&!/джинс|сукн|плать|тренч|пальто|штан|брюк/i.test(v)){go("looks");return}S.query=v;S.removed=new Set();S.sort="match";go("parse");return}
   if(f.id==="ask"){const i=document.getElementById("askq");ask(i.value);i.value="";return}
   if(f.id==="lookask"){const v=document.getElementById("lookq").value.trim();if(!v)return;S.quiz={step:QUIZ.length,a:lookFromText(v)};S.look=buildLook(S.quiz.a);render(true);return}
-  if(f.id==="city-form"){const v=document.getElementById("cityq").value.trim();if(!v)return;S.city=v[0].toUpperCase()+v.slice(1);closeModal();toast("Город: "+S.city,"location_on");if(S.route!=="landing")render(true);return}
-  if(f.id==="partner-form"){const v=document.getElementById("pname").value.trim();if(!v)return;need("pro",()=>{S.partner={name:v,ok:false};render(true);toast("Приглашение отправлено","send");timers.push(setTimeout(()=>{if(S.partner){S.partner.ok=true;if(S.route==="wishlist")render(true)}},1800))});return}
+  if(f.id==="city-form"){const v=document.getElementById("cityq").value.trim();if(!v)return;S.city=v[0].toUpperCase()+v.slice(1);closeModal();toast("Місто: "+S.city,"location_on");if(S.route!=="landing")render(true);return}
+  if(f.id==="partner-form"){const v=document.getElementById("pname").value.trim();if(!v)return;need("pro",()=>{S.partner={name:v,ok:false};render(true);toast("Запрошення надіслано","send");timers.push(setTimeout(()=>{if(S.partner){S.partner.ok=true;if(S.route==="wishlist")render(true)}},1800))});return}
 });
 document.addEventListener("change",e=>{
   const t=e.target;
   if(t.id==="sort"){S.sort=t.value;render(true)}
-  if(t.dataset.sizekey){S.sizes[t.dataset.sizekey]=t.value;toast("Размер сохранён")}
-  if(t.id==="file"){const f=t.files&&t.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{S.upload=rd.result;S.upCat="coat";go("crop")};rd.onerror=()=>toast("Не получилось открыть фото, попробуйте другое","error");rd.readAsDataURL(f)}
+  if(t.dataset.sizekey){S.sizes[t.dataset.sizekey]=t.value;toast("Розмір збережено")}
+  if(t.id==="file"){const f=t.files&&t.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{S.upload=rd.result;S.upCat="coat";go("crop")};rd.onerror=()=>toast("Не вдалося відкрити фото, спробуйте інше","error");rd.readAsDataURL(f)}
 });
 document.getElementById("fab").addEventListener("click",()=>openModal("map"));
 
