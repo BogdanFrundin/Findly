@@ -1,0 +1,576 @@
+[
+ {
+  "id": "j1",
+  "cat": "jeans",
+  "shape": "pants",
+  "store": "Kasta",
+  "name": "Широкі джинси High Loose",
+  "price": 1290,
+  "old": 1890,
+  "tone": "#9db4cc",
+  "color": "блакитний",
+  "attrs": [
+   "широкий крій",
+   "висока посадка",
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "Щільна бавовна 12 oz",
+  "url": ""
+ },
+ {
+  "id": "j2",
+  "cat": "jeans",
+  "shape": "pants",
+  "store": "Intertop",
+  "name": "Джинси wide leg, щільний денім",
+  "price": 2240,
+  "tone": "#86a1bf",
+  "color": "блакитний",
+  "attrs": [
+   "широкий крій",
+   "висока посадка",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "100% бавовна, жорсткий денім",
+  "url": ""
+ },
+ {
+  "id": "j3",
+  "cat": "jeans",
+  "shape": "pants",
+  "store": "Answear",
+  "name": "Джинси палацо, світлий денім",
+  "price": 2190,
+  "old": 2690,
+  "tone": "#b5c7da",
+  "color": "блакитний",
+  "attrs": [
+   "широкий крій"
+  ],
+  "q": 3,
+  "mat": "Бавовна з ліоцелом",
+  "url": ""
+ },
+ {
+  "id": "j4",
+  "cat": "jeans",
+  "shape": "pants",
+  "store": "Mango",
+  "name": "Джинси wide leg з високою талією",
+  "price": 1999,
+  "tone": "#7f9bbb",
+  "color": "блакитний",
+  "attrs": [
+   "широкий крій",
+   "висока посадка"
+  ],
+  "q": 4,
+  "mat": "Бавовна 98%",
+  "url": ""
+ },
+ {
+  "id": "j5",
+  "cat": "jeans",
+  "shape": "straight",
+  "store": "COS",
+  "name": "Прямі джинси з жорсткого деніму",
+  "price": 2490,
+  "tone": "#6d8bae",
+  "color": "синій",
+  "attrs": [
+   "прямий крій",
+   "висока посадка",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Органічна бавовна",
+  "url": ""
+ },
+ {
+  "id": "d1",
+  "cat": "dress",
+  "shape": "dress",
+  "store": "Mango",
+  "name": "Сукня міді, чорна",
+  "price": 2490,
+  "tone": "#272322",
+  "color": "чорний",
+  "attrs": [
+   "міді"
+  ],
+  "q": 4,
+  "mat": "Віскоза",
+  "url": ""
+ },
+ {
+  "id": "d2",
+  "cat": "dress",
+  "shape": "sheath",
+  "store": "Answear",
+  "name": "Сукня-футляр, бордова",
+  "price": 2190,
+  "tone": "#5c2230",
+  "color": "бордовий",
+  "attrs": [
+   "міді",
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "Костюмна тканина",
+  "url": ""
+ },
+ {
+  "id": "d3",
+  "cat": "dress",
+  "shape": "slip",
+  "store": "COS",
+  "name": "Сукня-комбінація з сатину",
+  "price": 2290,
+  "tone": "#3b3431",
+  "color": "чорний",
+  "attrs": [
+   "міді",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Сатин",
+  "url": ""
+ },
+ {
+  "id": "c1",
+  "cat": "coat",
+  "shape": "coat",
+  "store": "Kasta",
+  "name": "Двобортний тренч із щільної бавовни",
+  "price": 2890,
+  "old": 3590,
+  "tone": "#c6ab84",
+  "color": "бежевий",
+  "attrs": [
+   "оверсайз",
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "100% бавовна, габардин",
+  "url": ""
+ },
+ {
+  "id": "c2",
+  "cat": "coat",
+  "shape": "coat",
+  "store": "Mango",
+  "name": "Класичний тренч оверсайз",
+  "price": 3200,
+  "tone": "#bb9d73",
+  "color": "бежевий",
+  "attrs": [
+   "оверсайз"
+  ],
+  "q": 4,
+  "mat": "Бавовна з поліестером",
+  "url": ""
+ },
+ {
+  "id": "c3",
+  "cat": "coat",
+  "shape": "coat",
+  "store": "Answear",
+  "name": "Тренч із поясом, відтінок пісок",
+  "price": 2450,
+  "tone": "#d3bd99",
+  "color": "бежевий",
+  "attrs": [
+   "оверсайз"
+  ],
+  "q": 3,
+  "mat": "Поліестер",
+  "url": ""
+ },
+ {
+  "id": "c4",
+  "cat": "coat",
+  "shape": "coat",
+  "store": "Intertop",
+  "name": "Водовідштовхувальний тренч",
+  "price": 3590,
+  "old": 4390,
+  "tone": "#b2956e",
+  "color": "бежевий",
+  "attrs": [
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Бавовна з просоченням",
+  "url": ""
+ },
+ {
+  "id": "c5",
+  "cat": "coat",
+  "shape": "coat",
+  "store": "COS",
+  "name": "Вовняне пальто, бордо",
+  "price": 4690,
+  "tone": "#5a2230",
+  "color": "бордовий",
+  "attrs": [
+   "оверсайз",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Вовна 80%",
+  "url": ""
+ },
+ {
+  "id": "b1",
+  "cat": "blazer",
+  "shape": "blazer",
+  "store": "Mango",
+  "name": "Двобортний блейзер",
+  "price": 1590,
+  "tone": "#2f2c2b",
+  "color": "чорний",
+  "attrs": [
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "Костюмна тканина",
+  "url": ""
+ },
+ {
+  "id": "b2",
+  "cat": "blazer",
+  "shape": "blazer",
+  "store": "Answear",
+  "name": "Блейзер прямого крою",
+  "price": 1690,
+  "tone": "#8c8379",
+  "color": "сірий",
+  "attrs": [
+   "прямий крій"
+  ],
+  "q": 3,
+  "mat": "Віскоза",
+  "url": ""
+ },
+ {
+  "id": "s1",
+  "cat": "sweater",
+  "shape": "sweater",
+  "store": "COS",
+  "name": "Кашеміровий джемпер",
+  "price": 3600,
+  "old": 4200,
+  "tone": "#d9c8ae",
+  "color": "бежевий",
+  "attrs": [
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "100% кашемір",
+  "url": ""
+ },
+ {
+  "id": "s2",
+  "cat": "sweater",
+  "shape": "sweater",
+  "store": "Mango",
+  "name": "Светр великої в’язки",
+  "price": 1390,
+  "tone": "#e6dccb",
+  "color": "білий",
+  "attrs": [
+   "оверсайз"
+  ],
+  "q": 3,
+  "mat": "Акрил із вовною",
+  "url": ""
+ },
+ {
+  "id": "t1",
+  "cat": "top",
+  "shape": "top",
+  "store": "Mango",
+  "name": "Шовковий топ на бретелях",
+  "price": 890,
+  "tone": "#e9ddcc",
+  "color": "білий",
+  "attrs": [
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "Сатин",
+  "url": ""
+ },
+ {
+  "id": "t2",
+  "cat": "top",
+  "shape": "top",
+  "store": "COS",
+  "name": "Трикотажний топ",
+  "price": 790,
+  "tone": "#2b2827",
+  "color": "чорний",
+  "attrs": [],
+  "q": 4,
+  "mat": "Бавовна",
+  "url": ""
+ },
+ {
+  "id": "bl1",
+  "cat": "blouse",
+  "shape": "blouse",
+  "store": "COS",
+  "name": "Шовкова блуза вільного крою",
+  "price": 2890,
+  "tone": "#efe8db",
+  "color": "білий",
+  "attrs": [
+   "оверсайз",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Шовк",
+  "url": ""
+ },
+ {
+  "id": "bl2",
+  "cat": "blouse",
+  "shape": "blouse",
+  "store": "Mango",
+  "name": "Блуза з віскози",
+  "price": 990,
+  "tone": "#f2ede4",
+  "color": "білий",
+  "attrs": [],
+  "q": 3,
+  "mat": "Віскоза",
+  "url": ""
+ },
+ {
+  "id": "p1",
+  "cat": "trousers",
+  "shape": "trousers",
+  "store": "Answear",
+  "name": "Прямі струменисті штани",
+  "price": 1090,
+  "tone": "#3b3735",
+  "color": "чорний",
+  "attrs": [
+   "прямий крій",
+   "висока посадка"
+  ],
+  "q": 3,
+  "mat": "Віскоза",
+  "url": ""
+ },
+ {
+  "id": "p2",
+  "cat": "trousers",
+  "shape": "trousers",
+  "store": "Mango",
+  "name": "Широкі штани з вовни",
+  "price": 1890,
+  "tone": "#4a4440",
+  "color": "сірий",
+  "attrs": [
+   "широкий крій",
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "Вовна 30%",
+  "url": ""
+ },
+ {
+  "id": "p3",
+  "cat": "trousers",
+  "shape": "trousers",
+  "store": "COS",
+  "name": "Штани з защипами",
+  "price": 2490,
+  "tone": "#2f2b29",
+  "color": "чорний",
+  "attrs": [
+   "широкий крій",
+   "висока посадка",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Вовна 60%",
+  "url": ""
+ },
+ {
+  "id": "p4",
+  "cat": "trousers",
+  "shape": "trousers",
+  "store": "Kasta",
+  "name": "Штани палацо",
+  "price": 1190,
+  "tone": "#cbb89b",
+  "color": "бежевий",
+  "attrs": [
+   "широкий крій"
+  ],
+  "q": 3,
+  "mat": "Поліестер",
+  "url": ""
+ },
+ {
+  "id": "sk1",
+  "cat": "skirt",
+  "shape": "skirt",
+  "store": "Mango",
+  "name": "Спідниця міді плісе",
+  "price": 1190,
+  "tone": "#d9cbb3",
+  "color": "бежевий",
+  "attrs": [
+   "міді"
+  ],
+  "q": 3,
+  "mat": "Поліестер",
+  "url": ""
+ },
+ {
+  "id": "l1",
+  "cat": "shoes",
+  "shape": "loafer",
+  "store": "Kasta",
+  "name": "Шкіряні лофери",
+  "price": 1390,
+  "tone": "#1f1c1b",
+  "color": "чорний",
+  "attrs": [
+   "шкіра"
+  ],
+  "q": 4,
+  "mat": "Натуральна шкіра",
+  "url": ""
+ },
+ {
+  "id": "l2",
+  "cat": "shoes",
+  "shape": "loafer",
+  "store": "Answear",
+  "name": "Лофери з екошкіри",
+  "price": 1090,
+  "tone": "#3a2d24",
+  "color": "коричневий",
+  "attrs": [],
+  "q": 3,
+  "mat": "Екошкіра",
+  "url": ""
+ },
+ {
+  "id": "k1",
+  "cat": "sneakers",
+  "shape": "sneaker",
+  "store": "Intertop",
+  "name": "Білі шкіряні кросівки",
+  "price": 2390,
+  "old": 2990,
+  "tone": "#f2eee7",
+  "color": "білий",
+  "attrs": [
+   "шкіра",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Натуральна шкіра",
+  "url": ""
+ },
+ {
+  "id": "k2",
+  "cat": "sneakers",
+  "shape": "sneaker",
+  "store": "Answear",
+  "name": "Кросівки на пласкій підошві",
+  "price": 1890,
+  "tone": "#ece6dc",
+  "color": "білий",
+  "attrs": [],
+  "q": 4,
+  "mat": "Шкіра та замша",
+  "url": ""
+ },
+ {
+  "id": "k3",
+  "cat": "sneakers",
+  "shape": "sneaker",
+  "store": "Kasta",
+  "name": "Білі кеди",
+  "price": 1290,
+  "tone": "#f5f2ec",
+  "color": "білий",
+  "attrs": [],
+  "q": 3,
+  "mat": "Бавовняна тканина",
+  "url": ""
+ },
+ {
+  "id": "bg1",
+  "cat": "bag",
+  "shape": "bag",
+  "store": "Kasta",
+  "name": "Сумка-тоут зі шкіри",
+  "price": 2790,
+  "tone": "#5a2230",
+  "color": "бордовий",
+  "attrs": [
+   "шкіра",
+   "преміум-вигляд"
+  ],
+  "q": 5,
+  "mat": "Натуральна шкіра",
+  "url": ""
+ },
+ {
+  "id": "bg2",
+  "cat": "bag",
+  "shape": "bag",
+  "store": "Answear",
+  "name": "Сумка-шопер з екошкіри",
+  "price": 1490,
+  "tone": "#3a302a",
+  "color": "чорний",
+  "attrs": [],
+  "q": 3,
+  "mat": "Екошкіра",
+  "url": ""
+ },
+ {
+  "id": "bg3",
+  "cat": "bag",
+  "shape": "bag",
+  "store": "Mango",
+  "name": "Сумка на плече",
+  "price": 1990,
+  "old": 2490,
+  "tone": "#24201f",
+  "color": "чорний",
+  "attrs": [
+   "шкіра"
+  ],
+  "q": 4,
+  "mat": "Шкіра",
+  "url": ""
+ },
+ {
+  "id": "sc1",
+  "cat": "scarf",
+  "shape": "scarf",
+  "store": "Answear",
+  "name": "Шарф із вовни альпаки",
+  "price": 1350,
+  "old": 1850,
+  "tone": "#b88f66",
+  "color": "кемел",
+  "attrs": [
+   "преміум-вигляд"
+  ],
+  "q": 4,
+  "mat": "Альпака 50%",
+  "url": ""
+ }
+]
