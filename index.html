@@ -1007,10 +1007,9 @@ function go(r,replace){
   if(!V[r])return;
   if(!replace&&S.route!==r)S.hist.push(S.route);
   S.route=r;S.size=null;S.modal=null;
-  try{history.replaceState(null,"","#"+r)}catch(e){}
   render();
 }
-function goBack(){const r=S.hist.pop()||"search";S.route=r;S.modal=null;try{history.replaceState(null,"","#"+r)}catch(e){}render()}
+function goBack(){const r=S.hist.pop()||"search";S.route=r;S.modal=null;render()}
 function toast(t,icon="check"){const el=document.getElementById("toast");el.querySelector(".ms").textContent=icon;document.getElementById("toastText").textContent=t;el.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove("show"),2600)}
 function renderMap(){
   const cur=S.modal&&Object.entries(MODAL_SCREENS).find(([k,v])=>v[1]===S.modal&&v[0]===S.route);
@@ -1136,8 +1135,8 @@ document.addEventListener("change",e=>{
 document.getElementById("fab").addEventListener("click",()=>openModal("map"));
 
 /* boot */
-const start=(location.hash||"").slice(1);
-if(V[start]&&start!=="landing"){jump(start)}else{S.route="landing";render()}
+try{if(location.hash)history.replaceState(null,"",location.pathname+location.search)}catch(e){}
+S.route="landing";render();
 })();
 </script>
 
